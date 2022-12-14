@@ -1,0 +1,46 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap");
+
+:root {
+  --primary-color: rgb(244, 130, 32);
+  --text-color: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 50%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-style: normal;
+  font-weight: 400;
+  color: #7d7d7d;
+  background-color: #ffffff;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.MenuItem {
+  color: black;
+}

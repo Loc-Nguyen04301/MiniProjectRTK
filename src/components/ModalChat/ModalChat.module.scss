@@ -1,0 +1,37 @@
+.modal-container {
+  width: 375px;
+  height: 375px;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+  z-index: 10000;
+}
+
+.button-start {
+  width: 267px;
+  height: 54px;
+  border-radius: 30px !important;
+  position: absolute;
+  bottom: 40px;
+  left: 15%;
+  .button-text {
+    color: #fff;
+    font-size: 17px;
+  }
+}
+
+.fontawesome-icon {
+  padding: 8px;
+  background-color: #f5f5f5;
+  margin: 0px 5px;
+  border-radius: 50%;
+  color: #222;
+  font-size: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+}
