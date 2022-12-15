@@ -72,7 +72,12 @@ const ManufacturerSlider = () => {
       items={imagesBrandSlider}
       animationType={"slide"}
       responsive={responsive}
+      autoPlay
+      infinite
+      animationDuration="2000"
       disableDotsControls
+      disableButtonsControls
+      disableSlideInfo
     />
   );
 };

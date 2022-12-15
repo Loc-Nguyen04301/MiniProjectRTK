@@ -34,7 +34,7 @@ const Header = () => {
           <div className={cx("left")}>
             <p>
               Chào mừng bạn đến với THOL Store {}
-              <Link to="/dang-ki" className={cx("login-text")}>
+              <Link to="/dang-ky" className={cx("login-text")}>
                 Đăng kí {}
               </Link>
               hoặc {}
@@ -44,7 +44,7 @@ const Header = () => {
             </p>
           </div>
           <div className={cx("right")}>
-            <Link to="/login">
+            <Link to="/dang-nhap">
               <FontAwesomeIcon className="px-2" icon={faLock} size={"xs"} />
               <span>Đăng nhập</span>
             </Link>
@@ -56,11 +56,7 @@ const Header = () => {
                     <span>Tài khoản của tôi</span>{" "}
                   </Link>
                 </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem active href="#" tag="a">
-                    Link
-                  </DropdownItem>
-                </DropdownMenu>
+                <DropdownMenu></DropdownMenu>
               </UncontrolledDropdown>
             </div>
           </div>

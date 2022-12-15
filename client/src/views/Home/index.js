@@ -5,13 +5,14 @@ import styles from "@/assets/styles/Home.module.scss";
 import classNames from "classnames/bind";
 import { imagesPosterSlider } from "@/assets/datas/dataSlider";
 import ManufacturerSlider from "./components/ManufacturerSlider";
+import { Link } from "react-router-dom";
+
 let cx = classNames.bind(styles);
 
 const Home = () => {
   return (
     <Container>
       <Row className="flex-nowrap justify-content-end my-5">
-        
         <SimpleImageSlider
           width={650}
           height={510}
@@ -62,143 +63,23 @@ const Home = () => {
         </div>
         <Col xs="3">
           <div className={cx("box-product")}>
-            <a
-              href="https://www.thol.com.vn/nutrex-lipo-6-black.html"
+            <Link
+              to={"/detail"}
               title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
             >
               <img
                 src="https://www.thol.com.vn/pub/media/catalog/product/cache/thumbnail/400x400/beff4985b56e3afdbeabfc89641a4582/l/i/lipo_6_black.png"
                 alt="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
               />
-            </a>
+            </Link>
             <h3>
-              <a
-                href="https://www.thol.com.vn/labrada-muscle-mass-gainer.html"
+              <Link
+                to={"/detail"}
                 title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
                 className="text-center mt-3"
               >
                 Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân{" "}
-              </a>
-            </h3>
-            <div className="d-flex justify-content-center mt-5">
-              <span className="price-container">
-                <span className={cx("price-wrapper")}>
-                  <span className={cx("new-price")}>2.060.000&nbsp;₫</span>{" "}
-                  <span className={cx("old-price")}>1.060.000&nbsp;₫</span>{" "}
-                </span>
-              </span>
-            </div>
-          </div>
-        </Col>
-        <Col xs="3">
-          <div className={cx("box-product")}>
-            <a
-              href="https://www.thol.com.vn/nutrex-lipo-6-black.html"
-              title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-            >
-              <img
-                src="https://www.thol.com.vn/pub/media/catalog/product/cache/thumbnail/400x400/beff4985b56e3afdbeabfc89641a4582/l/i/lipo_6_black.png"
-                alt="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-              />
-            </a>
-            <h3>
-              <a
-                href="https://www.thol.com.vn/labrada-muscle-mass-gainer.html"
-                title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-                className="text-center mt-3"
-              >
-                Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân{" "}
-              </a>
-            </h3>
-            <div className="d-flex justify-content-center mt-5">
-              <span className="price-container">
-                <span className={cx("price-wrapper")}>
-                  <span className={cx("new-price")}>2.060.000&nbsp;₫</span>{" "}
-                  <span className={cx("old-price")}>1.060.000&nbsp;₫</span>{" "}
-                </span>
-              </span>
-            </div>
-          </div>
-        </Col>
-        <Col xs="3">
-          <div className={cx("box-product")}>
-            <a
-              href="https://www.thol.com.vn/nutrex-lipo-6-black.html"
-              title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-            >
-              <img
-                src="https://www.thol.com.vn/pub/media/catalog/product/cache/thumbnail/400x400/beff4985b56e3afdbeabfc89641a4582/l/i/lipo_6_black.png"
-                alt="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-              />
-            </a>
-            <h3>
-              <a
-                href="https://www.thol.com.vn/labrada-muscle-mass-gainer.html"
-                title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-                className="text-center mt-3"
-              >
-                Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân{" "}
-              </a>
-            </h3>
-            <div className="d-flex justify-content-center mt-5">
-              <span className="price-container">
-                <span className={cx("price-wrapper")}>
-                  <span className={cx("new-price")}>2.060.000&nbsp;₫</span>{" "}
-                  <span className={cx("old-price")}>1.060.000&nbsp;₫</span>{" "}
-                </span>
-              </span>
-            </div>
-          </div>
-        </Col>
-        <Col xs="3">
-          <div className={cx("box-product")}>
-            <a
-              href="https://www.thol.com.vn/nutrex-lipo-6-black.html"
-              title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-            >
-              <img
-                src="https://www.thol.com.vn/pub/media/catalog/product/cache/thumbnail/400x400/beff4985b56e3afdbeabfc89641a4582/l/i/lipo_6_black.png"
-                alt="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-              />
-            </a>
-            <h3>
-              <a
-                href="https://www.thol.com.vn/labrada-muscle-mass-gainer.html"
-                title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-                className="text-center mt-3"
-              >
-                Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân{" "}
-              </a>
-            </h3>
-            <div className="d-flex justify-content-center mt-5">
-              <span className="price-container">
-                <span className={cx("price-wrapper")}>
-                  <span className={cx("new-price")}>2.060.000&nbsp;₫</span>{" "}
-                  <span className={cx("old-price")}>1.060.000&nbsp;₫</span>{" "}
-                </span>
-              </span>
-            </div>
-          </div>
-        </Col>
-        <Col xs="3">
-          <div className={cx("box-product")}>
-            <a
-              href="https://www.thol.com.vn/nutrex-lipo-6-black.html"
-              title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-            >
-              <img
-                src="https://www.thol.com.vn/pub/media/catalog/product/cache/thumbnail/400x400/beff4985b56e3afdbeabfc89641a4582/l/i/lipo_6_black.png"
-                alt="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-              />
-            </a>
-            <h3>
-              <a
-                href="https://www.thol.com.vn/labrada-muscle-mass-gainer.html"
-                title="Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân"
-                className="text-center mt-3"
-              >
-                Nutrex Lipo 6 Black fat burner Đốt Mỡ Giảm Cân{" "}
-              </a>
+              </Link>
             </h3>
             <div className="d-flex justify-content-center mt-5">
               <span className="price-container">
@@ -211,7 +92,7 @@ const Home = () => {
           </div>
         </Col>
       </Row>
-
+      {/* 
       <Row className={cx("product-category-container")}>
         <div className={cx("category-product-box")}>
           <h2 className="from-blog">PROTEIN TĂNG CÂN</h2>
@@ -678,7 +559,7 @@ const Home = () => {
             </div>
           </div>
         </Col>
-      </Row>
+      </Row> */}
 
       <Row className={cx("banner-container")}>
         <a href="/">

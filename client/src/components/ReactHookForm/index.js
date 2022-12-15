@@ -2,7 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Alert } from "reactstrap";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -17,6 +16,7 @@ const ReactHookForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
+  
   const onSubmit = (data) => {
     alert(JSON.stringify(data, null, 2));
   };

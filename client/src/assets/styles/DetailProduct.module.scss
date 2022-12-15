@@ -1,0 +1,96 @@
+.breadcrumbs a span {
+  color: #222;
+  font-size: 1.6rem;
+}
+
+.breadcrumbs {
+  margin: 35px 0px;
+}
+
+.info-detail-container {
+  .title-product {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 180%;
+    color: #222;
+  }
+  .review {
+    color: #222222;
+    font-size: 13px;
+  }
+  .new-price {
+    color: var(--primary-color);
+    font-size: 123%;
+    font-weight: 700;
+  }
+  .old-price {
+    font-size: 100%;
+    color: #999999;
+    text-decoration: line-through;
+    font-weight: 600;
+  }
+  .number-product {
+    line-height: 32px;
+    height: 32px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    font-size: 3rem;
+  }
+  .quantity-minus,
+  .quantity-plus {
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+    margin: 0px 5px 8px;
+  }
+  .display-number {
+    border: none;
+    color: #323232;
+    font-weight: 700;
+    text-align: center;
+    width: 45px;
+    height: 30px;
+    padding: 0 9px;
+    margin-bottom: 5px;
+    margin-left: 2px
+  }
+  .add-product {
+    background-color: var(--primary-color);
+    margin: 0 20px;
+    border-radius: 16px;
+    .add-product-text {
+      font-size: 150%;
+      margin: 4px;
+      text-transform: capitalize;
+      letter-spacing: 0.5px;
+    }
+    border: none;
+  }
+  .buy-now {
+    background-color: #0099b2;
+    width: -webkit-fill-available;
+    border: none;
+    padding: 14px 17px;
+    .line-1 {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+    .line-2 {
+      font-size: 1.6rem;
+      font-weight: 200;
+    }
+  }
+  .call-support {
+    background-color: red;
+    width: -webkit-fill-available;
+    border: none;
+    padding: 14px 17px;
+    .line-1 {
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+  }
+}

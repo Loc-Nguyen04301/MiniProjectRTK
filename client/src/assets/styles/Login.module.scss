@@ -1,0 +1,50 @@
+.login-container {
+  font-size: 138.5%;
+  color: #222;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 30px 0;
+}
+
+.block-customer-login {
+  padding: 30px;
+  margin: 30px 0;
+  background-color: #fafafa;
+  min-height: 320px;
+  border: 1px solid #ddd;
+  .form-container {
+    width: min-content;
+  }
+  .label-email,
+  .label-password {
+    width: 500px;
+    text-align: left !important;
+    font-weight: 500 !important;
+  }
+  .label-email::after,
+  .label-password::after {
+    content: "*";
+    color: #e02b27;
+    font-size: 1.8rem;
+    margin: 0 0 0 5px;
+  }
+  input {
+    width: 500px;
+    height: 35px;
+    border: 1px solid #adadad;
+    background-color: #fff;
+    background-color: #fff;
+    outline: none;
+    border-radius: 2px;
+  }
+  .button-submit {
+    padding: 0 20px;
+  }
+  .dang-nhap {
+    line-height: 30px;
+    white-space: nowrap;
+    font-size: 150% !important;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
