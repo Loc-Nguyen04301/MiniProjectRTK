@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import classNames from "classnames/bind";
 import styles from "@/assets/styles/Login.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Container, Row, Col, Button } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 let cx = classNames.bind(styles);
 
 const schema = yup.object().shape({
+  name: yup.string().required(),
   email: yup.string().email().required(),
   password: yup.string().required("Password is required").min(6),
   confirmPassword: yup
@@ -25,11 +28,42 @@ const Register = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  let navigate = useNavigate();
+  const formRef = useRef();
 
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data, null, 2));
-    navigate("/dang-nhap");
+  const onSubmit = async (data) => {
+    try {
+      const config = {
+        method: "post",
+        url: "http://localhost:8080/api/v1/auth/register",
+        data: data,
+      };
+      const response = await axios(config);
+      console.log(response);
+      toast.success("Register Successfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        formRef.current.reset();
+      }, 3000);
+    } catch (error) {
+      toast.error(`${error.response.data.message}`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   return (
@@ -44,9 +78,14 @@ const Register = () => {
               bạn.
             </p>
             <form
-              onSubmit={handleSubmit(onSubmit)}
               className={cx("form-container")}
+              onSubmit={handleSubmit(onSubmit)}
+              ref={formRef}
             >
+              <div className={cx("label-name")}>Name</div>
+              <input {...register("name")} type={"text"} />
+              <p>{errors.name?.message}</p>
+
               <div className={cx("label-email")}>Email</div>
               <input {...register("email")} type={"text"} />
               <p>{errors.email?.message}</p>
@@ -63,6 +102,18 @@ const Register = () => {
                 <span className={cx("dang-nhap")}>Tạo tài khoản </span>
               </Button>
             </form>
+            <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           </div>
         </Col>
       </Row>

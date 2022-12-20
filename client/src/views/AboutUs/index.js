@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import { Container, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 let cx = classNames.bind(styles);
 
@@ -75,12 +76,12 @@ const AboutUs = () => {
           </div>
         </Col>
         <Col xs="3">
-          <a href="/rsp-whey-protein">
+          <Link to="/">
             <img
               src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
               alt="whey tăng cơ giảm mỡ thol"
             />
-          </a>
+          </Link>
         </Col>
       </Row>
     </Container>

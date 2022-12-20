@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ModalChat.module.scss";
+import styles from "@/assets/styles/ModalChat.module.scss";
 import classNames from "classnames/bind";
 import { Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,7 @@ const ModalChat = ({ setOpenModal }) => {
       <div className="m-5 d-flex justify-content-between">
         <img
           className={cx("_a3jx img")}
-          src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-1/305583313_622150602713098_6729240055116173157_n.jpg?stp=cp0_dst-jpg_p80x80&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=05dcb7&amp;_nc_ohc=OV93Xlc2IwEAX81gJKs&amp;tn=6NUB1o3xO_ypxuTb&amp;_nc_ht=scontent.fhan14-2.fna&amp;oh=00_AfDIwabjG7K6fIjK_9gjM7AswbP2xpGhaADTakZl1tzTSA&amp;oe=639A6401"
+          src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-1/305583313_622150602713098_6729240055116173157_n.jpg?stp=cp0_dst-jpg_p80x80&_nc_cat=108&ccb=1-7&_nc_sid=05dcb7&_nc_ohc=prW5eD0aeOIAX9SoMKP&tn=6NUB1o3xO_ypxuTb&_nc_ht=scontent.fhan14-2.fna&oh=00_AfBfgZUimYUzBL7qzKqNnyDGJy7Q-2hYSnVxeJ9hgL3daA&oe=63A44741"
           alt=""
           width={"48px"}
           height={"48px"}

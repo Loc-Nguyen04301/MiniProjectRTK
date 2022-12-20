@@ -10,6 +10,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import ReactHookForm from "@/components/ReactHookForm";
+import { Link } from "react-router-dom";
 
 let cx = classNames.bind(styles);
 
@@ -25,12 +26,12 @@ const Contact = () => {
       </div>
       <Row>
         <Col xs="3">
-          <a href="/rsp-whey-protein">
+          <Link to="/">
             <img
               src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
               alt="whey tăng cơ giảm mỡ thol"
             />
-          </a>
+          </Link>
         </Col>
         <Col xs="9">
           <iframe

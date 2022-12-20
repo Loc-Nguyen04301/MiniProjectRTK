@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "reactstrap";
-import styles from "./Footer.module.scss";
+import styles from "@/assets/styles/Footer.module.scss";
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,7 +14,7 @@ import {
   faLocationDot,
   faMobileAndroid,
 } from "@fortawesome/free-solid-svg-icons";
-import ModalChat from "@/components/ModalChat";
+import ModalChat from "@/Layout/DefaultLayout/Footer/components/ModalChat";
 
 let cx = classNames.bind(styles);
 
@@ -308,7 +308,7 @@ const Footer = () => {
           </svg>
         </span>
       </div>
-      {openModal ? <ModalChat setOpenModal={setOpenModal}/> : ""}
+      {openModal ? <ModalChat setOpenModal={setOpenModal} /> : ""}
     </div>
   );
 };

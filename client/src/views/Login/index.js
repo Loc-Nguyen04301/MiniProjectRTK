@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames/bind";
 import styles from "@/assets/styles/Login.module.scss";
 import { useForm } from "react-hook-form";
@@ -6,6 +6,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Container, Row, Col, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { loginAccount } from "@/redux/auth";
+import { useDispatch } from "react-redux";
 
 let cx = classNames.bind(styles);
 
@@ -21,11 +26,48 @@ const Login = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data, null, 2));
-    navigate("/");
+  const dispatch = useDispatch();
+
+  const onSubmit = async (data) => {
+    try {
+      const config = {
+        method: "post",
+        url: "http://localhost:8080/api/v1/auth/login",
+        data: data,
+      };
+      const response = await axios(config);
+      console.log(response);
+      const { token, userName } = response.data;
+      localStorage.setItem("token", token);
+      
+      toast.success("Login Successfully", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        dispatch(loginAccount({ token, userName }));
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      toast.error(`${error.response.data.message}`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   return (
@@ -57,6 +99,18 @@ const Login = () => {
                 <span>Bạn chưa có tài khoản ?</span>
               </div>
             </form>
+            <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           </div>
         </Col>
       </Row>

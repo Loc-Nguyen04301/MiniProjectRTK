@@ -15,12 +15,14 @@
   .form-container {
     width: min-content;
   }
+  .label-name,
   .label-email,
   .label-password {
     width: 500px;
     text-align: left !important;
     font-weight: 500 !important;
   }
+  .label-name::after,
   .label-email::after,
   .label-password::after {
     content: "*";

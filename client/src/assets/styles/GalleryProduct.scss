@@ -1,0 +1,19 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --bs-pagination-font-size: 2rem !important;
+  --bs-pagination-active-bg: #c8c8c8 !important;
+  --bs-pagination-active-border-color: #c8c8c8 !important;
+  .page-item {
+    font-size: 200%;
+    &.disabled a {
+      font-weight: 500;
+    }
+  }
+}
+
+.active .page-link {
+  background-color: #ffffff;
+  border-color: #c8c8c8;
+}

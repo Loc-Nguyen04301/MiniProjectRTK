@@ -9,7 +9,9 @@ let cx = classNames.bind(styles);
 const BankAccount = () => {
   return (
     <Container>
-      <div className={cx("title-header")}>Bảng tính Calories các loại thực phẩm </div>
+      <div className={cx("title-header")}>
+        Bảng tính Calories các loại thực phẩm{" "}
+      </div>
       <Row>
         <DataTable />
       </Row>

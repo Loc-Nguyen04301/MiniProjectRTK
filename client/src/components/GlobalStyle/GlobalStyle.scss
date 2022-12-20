@@ -44,3 +44,11 @@ a {
 .MenuItem {
   color: black;
 }
+
+.activated {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.btn.disabled {
+  opacity: 1 !important;
+}

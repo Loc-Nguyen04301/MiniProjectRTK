@@ -68,24 +68,22 @@ img {
   font-weight: 600;
 }
 
-.product-category-container {
+.news-category-container {
   margin-bottom: 50px;
-}
-
-.category-product-box {
-  position: relative;
-  margin-top: 50px;
+  .category-news-box {
+    position: relative;
+    margin-top: 50px;
+  }
+  .blog-inner .blog-content {
+    margin: 10px 0;
+    color: rgb(34, 34, 34);
+    font-size: 107.7%;
+    font-weight: 700;
+  }
 }
 
 .banner-container {
   padding: 40px 0px;
-}
-
-.blog-inner .blog-content {
-  margin: 10px 0;
-  color: rgb(34, 34, 34);
-  font-size: 107.7%;
-  font-weight: 700;
 }
 
 .alice-carousel__prev-btn-item.__inactive,

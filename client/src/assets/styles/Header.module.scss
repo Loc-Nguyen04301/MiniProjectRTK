@@ -29,6 +29,7 @@
     .right {
       width: 25%;
       display: flex;
+      justify-content: space-evenly;
     }
   }
 }
@@ -39,6 +40,15 @@ a {
 
 .login-text {
   color: var(--primary-color) !important;
+}
+
+.log-out {
+  color: var(--primary-color) !important;
+
+  &:hover {
+    color: var(--primary-color) !important;
+    cursor: pointer;
+  }
 }
 
 a:hover {
@@ -53,11 +63,13 @@ a span:hover {
   color: var(--primary-color);
 }
 
-.nav-text span {
+.nav-link span {
   color: var(--text-color);
+  font-size: 120%;
+  font-weight: 600;
 }
 
-.nav-text span:hover {
+.nav-link span:hover {
   color: var(--primary-color);
 }
 
@@ -85,9 +97,6 @@ a span:hover {
   font-weight: 600 !important;
 }
 
-.menu-content-sidebar {
-}
-
 .dropdown-btn {
   height: 6.2rem;
   width: 250px;
@@ -99,12 +108,23 @@ a span:hover {
   font-weight: 700;
   font-size: 1.4rem;
   color: #fff;
-  position: relative;
   margin-left: 5px;
+}
+.search-box {
+  width: 70%;
 }
 
 .input-form {
   height: 5rem;
+}
+
+input[type="text"] {
+  font-size: 12px;
+}
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 12px;
 }
 
 .btn-custom {
@@ -120,7 +140,10 @@ a span:hover {
   padding: 1.5rem;
 }
 
-.container-icon {
+.container-icon-heart,
+.container-icon-retweet,
+.container-icon-shoppingcart {
+  color: var(--text-color);
   background-color: #fff;
   border-radius: 50%;
   height: 38px;
@@ -129,4 +152,46 @@ a span:hover {
   align-items: center;
   justify-content: center;
   margin: 3px;
+}
+
+.container-icon-shoppingcart:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.wishlist-cart {
+  position: relative;
+  text-align: center;
+  width: 25%;
+  .total-item {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+.dropdown-cart {
+  position: absolute;
+  background-color: #fff;
+  width: 320px;
+  height: 500px;
+  top: 45px;
+  right: 40px;
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 2px;
+  z-index: 1000;
+  transform-origin: calc(100%) top;
+  animation: Cart ease-in 0.15s;
+}
+
+@keyframes Cart {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }

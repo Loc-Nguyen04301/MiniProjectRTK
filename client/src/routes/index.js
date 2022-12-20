@@ -6,6 +6,9 @@ import BankAccount from "@/views/BankAccount";
 import DetailProduct from "@/views/DetailProduct";
 import Login from "@/views/Login";
 import Register from "@/views/Register";
+import ShoppingCart from "@/views/ShoppingCart";
+import Search from "@/views/Search";
+import NotFound from "@/views/NotFound";
 import DefaultLayout from "@/Layout/DefaultLayout";
 const publicRoutes = [
   {
@@ -14,33 +17,48 @@ const publicRoutes = [
     layout: DefaultLayout,
   },
   {
-    path: "gioi-thieu",
+    path: "/gioi-thieu",
     component: AboutUs,
     layout: DefaultLayout,
   },
   {
-    path: "lien-he",
+    path: "/lien-he",
     component: Contact,
     layout: DefaultLayout,
   },
   {
-    path: "tai-khoan-ngan-hang",
+    path: "/tai-khoan-ngan-hang",
     component: BankAccount,
     layout: DefaultLayout,
   },
   {
-    path: "detail",
+    path: "/:name",
     component: DetailProduct,
     layout: DefaultLayout,
   },
   {
-    path: "dang-nhap",
+    path: "/dang-nhap",
     component: Login,
     layout: DefaultLayout,
   },
   {
-    path: "dang-ky",
+    path: "/dang-ky",
     component: Register,
+    layout: DefaultLayout,
+  },
+  {
+    path: "/thanh-toan",
+    component: ShoppingCart,
+    layout: DefaultLayout,
+  },
+  {
+    path: "/search/:search",
+    component: Search,
+    layout: DefaultLayout,
+  },
+  {
+    path: "/404",
+    component: NotFound,
     layout: DefaultLayout,
   },
 ];
