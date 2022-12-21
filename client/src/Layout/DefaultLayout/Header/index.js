@@ -84,7 +84,7 @@ const Header = () => {
           {userName ? (
             <div className={cx("right")}>
               <span>
-                <FontAwesomeIcon className="px-2" icon={faUser} size={"x"} />
+                <FontAwesomeIcon className="px-2" icon={faUser} size={"lg"} />
                 Hello, {userName}
               </span>
               <span className={cx("log-out")} onClick={handleSignOut}>

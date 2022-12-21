@@ -25,8 +25,7 @@ const App = () => {
     fetchingData();
   }, [fetchingData]);
 
-  // checkCurrentUser
-
+  // checkCurrentUser after refesh page
   const checkCurrentUser = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
@@ -38,7 +37,6 @@ const App = () => {
         },
       };
       const res = await axios(option);
-      console.log(res);
       if (res.data.userName) {
         const userName = res.data.userName;
         dispatch(loginAccount({ token, userName }));
