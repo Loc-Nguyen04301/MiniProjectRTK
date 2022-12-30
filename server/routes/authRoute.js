@@ -1,5 +1,5 @@
 //Define Routes
-const checkAuth = require("../middlewares/verifyToken");
+
 const {
   register,
   login,

@@ -28,6 +28,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import WishListCart from "./components/WishListCart";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutAccount } from "@/redux/auth";
+import { resetCart } from "@/redux/cart";
 
 let cx = classNames.bind(styles);
 
@@ -54,8 +55,9 @@ const Header = () => {
   };
 
   const handleSignOut = () => {
-    localStorage.removeItem("userName");
     localStorage.removeItem("token");
+    localStorage.removeItem("persist:cart");
+    dispatch(resetCart());
     dispatch(logoutAccount());
   };
 

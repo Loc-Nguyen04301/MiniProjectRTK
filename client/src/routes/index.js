@@ -32,7 +32,7 @@ const publicRoutes = [
     layout: DefaultLayout,
   },
   {
-    path: "/:name",
+    path: "/detail/:name",
     component: DetailProduct,
     layout: DefaultLayout,
   },

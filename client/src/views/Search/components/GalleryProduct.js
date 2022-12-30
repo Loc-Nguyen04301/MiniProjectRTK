@@ -14,11 +14,11 @@ function Items({ currentProducts }) {
         currentProducts.map((product) => (
           <Col xs="4" key={product.id}>
             <div className={cx("box-product")}>
-              <Link to={`/${product.name}`}>
+              <Link to={`/detail/${product.name}`}>
                 <img src={product.img} alt="" />
               </Link>
               <h3>
-                <Link to={`/${product.name}`} className="text-center mt-3">
+                <Link to={`/detail/${product.name}`} className="text-center mt-3">
                   {product.name}
                 </Link>
               </h3>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Website mini project",
   "main": "server.js",
+
   "scripts": {
     "start": "nodemon server.js"
   },

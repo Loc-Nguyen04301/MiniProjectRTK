@@ -28,6 +28,8 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.TEXT("long"),
       allowNull: false,
     },
+  }, {
+    
   });
   return Product;
 };
