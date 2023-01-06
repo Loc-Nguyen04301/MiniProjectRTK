@@ -1,21 +1,30 @@
-import React from "react";
-import DataTable from "@/components/DataTable";
-import { Container, Row } from "reactstrap";
-import styles from "@/assets/styles/BankAccount.module.scss";
-import classNames from "classnames/bind";
-
-let cx = classNames.bind(styles);
+import React, { useState, useRef } from "react";
 
 const BankAccount = () => {
+  const [count, setCount] = useState(60);
+
+  let timerId = useRef();
+  console.log(timerId.current);
+
+  const handleStart = () => {
+    timerId.current = setInterval(() => {
+      setCount((prev) => prev - 1);
+    }, 1000);
+
+    console.log("Start->", timerId.current);
+  };
+
+  const handleStop = () => {
+    clearInterval(timerId.current);
+    console.log("Stop->", timerId.current);
+  };
+
   return (
-    <Container>
-      <div className={cx("title-header")}>
-        Bảng tính Calories các loại thực phẩm{" "}
-      </div>
-      <Row>
-        <DataTable />
-      </Row>
-    </Container>
+    <div style={{ padding: 20 }}>
+      <h1>{count}</h1>
+      <button onClick={handleStart}>Start</button>
+      <button onClick={handleStop}>Stop</button>
+    </div>
   );
 };
 

@@ -1,16 +1,13 @@
 export const imagesPosterSlider = [
   {
     id: 1,
-    url: "https://www.thol.com.vn/pub/media/wysiwyg/banner-evogen1.jpg",
+    url: "https://www.thol.com.vn/wp-content/uploads/2023/01/True-Fit-banner-home.jpg",
   },
   {
     id: 2,
-    url: "https://www.thol.com.vn/pub/media/wysiwyg/imageslider/slide-mass-effect.jpg",
+    url: "https://www.thol.com.vn/wp-content/uploads/2023/01/slide-mass-effect.jpg",
   },
-  {
-    id: 3,
-    url: "https://www.thol.com.vn/pub/media/wysiwyg/imageslider/True-Fit-banner-home.jpg",
-  },
+
 ];
 
 

@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { loginAccount } from "@/redux/auth";
 import { useDispatch } from "react-redux";
+// import Oauth from "@/features/Oauth";
 
 let cx = classNames.bind(styles);
 
@@ -41,7 +42,7 @@ const Login = () => {
       console.log(response);
       const { token, userName } = response.data;
       localStorage.setItem("token", token);
-      
+
       toast.success("Login Successfully", {
         position: "top-center",
         autoClose: 2000,
@@ -74,7 +75,7 @@ const Login = () => {
     <Container>
       <div className={cx("login-container")}>KHÁCH HÀNG ĐĂNG NHẬP</div>
       <Row>
-        <Col xs="12">
+        <Col xs="6">
           <div className={cx("block-customer-login")}>
             <p>Khách hàng đã đăng ký</p>
             <p>
@@ -113,6 +114,9 @@ const Login = () => {
             />
           </div>
         </Col>
+        {/* <Col xs="6">
+          <Oauth />
+        </Col> */}
       </Row>
     </Container>
   );

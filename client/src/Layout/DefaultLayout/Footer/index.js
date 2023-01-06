@@ -274,20 +274,8 @@ const Footer = () => {
         <Container>
           <div className={cx("copyright-footer") + ` m-5`}>
             <address>
-              Copyright ©{" "}
-              <a href="http://www.thehinhonline.com.vn/">ThehinhOnline</a> . All
-              Rights Reserved.
+              Copyright © <a href="/">ThehinhOnline</a> . All Rights Reserved.
             </address>
-          </div>
-          <div className={cx("payment-footer")}>
-            <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/payment/payment1.png"
-              alt="Payment"
-            />
-            <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/payment/payment2.png"
-              alt="Payment"
-            ></img>
           </div>
         </Container>
       </div>

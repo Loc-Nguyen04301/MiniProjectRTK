@@ -9,7 +9,7 @@ import {
   faLocationDot,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import ReactHookForm from "@/components/ReactHookForm";
+import ReactHookForm from "@/features/ReactHookForm";
 import { Link } from "react-router-dom";
 
 let cx = classNames.bind(styles);
@@ -28,7 +28,7 @@ const Contact = () => {
         <Col xs="3">
           <Link to="/">
             <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
+              src="https://www.thol.com.vn/wp-content/uploads/2023/01/Whey-RSP-banner.jpg"
               alt="whey tăng cơ giảm mỡ thol"
             />
           </Link>

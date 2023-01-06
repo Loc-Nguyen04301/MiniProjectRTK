@@ -27,7 +27,7 @@ const AboutUs = () => {
           </div>
           <p>
             <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/chatLuong_1.jpg"
+              src="https://www.thol.com.vn/wp-content/uploads/2023/01/chatLuong_1.jpg"
               alt="Giới thiệu thương hiệu THOL"
             />
           </p>
@@ -47,8 +47,8 @@ const AboutUs = () => {
 
           <div className="alert alert-info">
             <img
-              src={"https://www.thol.com.vn/media/wysiwyg/stick_2.png"}
-              alt=""
+              src="https://web.archive.org/web/20220519013654im_/https://www.thol.com.vn/media/wysiwyg/stick_2.png"
+              alt="sticky_1"
               className="mx-1"
             />
             <span>
@@ -58,8 +58,8 @@ const AboutUs = () => {
             </span>
             <br />
             <img
-              src={"https://www.thol.com.vn/media/wysiwyg/stick_2.png"}
-              alt=""
+              src="https://web.archive.org/web/20220519013654im_/https://www.thol.com.vn/media/wysiwyg/stick_2.png"
+              alt="sticky_1"
               className="mx-1"
             />
             <span>
@@ -78,7 +78,7 @@ const AboutUs = () => {
         <Col xs="3">
           <Link to="/">
             <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
+              src="https://www.thol.com.vn/wp-content/uploads/2023/01/Whey-RSP-banner.jpg"
               alt="whey tăng cơ giảm mỡ thol"
             />
           </Link>

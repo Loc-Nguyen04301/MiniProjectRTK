@@ -7,12 +7,14 @@ import {
 } from "react-router-dom";
 import DefaultLayout from "./Layout/DefaultLayout";
 import { publicRoutes } from "./routes";
-import ScrollGoToTop from "./components/ScrollGoToTop";
-import "bootstrap/dist/css/bootstrap.min.css";
+import ScrollGoToTop from "./features/ScrollGoToTop";
 import { useDispatch } from "react-redux";
 import { loginAccount } from "./redux/auth";
 import { retrieveProducts } from "@/redux/product";
 import axios from "axios";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,13 +27,13 @@ const App = () => {
     fetchingData();
   }, [fetchingData]);
 
-  // checkCurrentUser after refesh page
+  // checkCurrentUser after refresh page
   const checkCurrentUser = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
       const option = {
         method: "get",
-        url: "http://localhost:8080/api/v1/auth/",
+        url: "http://localhost:8080/api/v1/auth",
         headers: {
           Authorization: `Bearer ${token}`,
         },

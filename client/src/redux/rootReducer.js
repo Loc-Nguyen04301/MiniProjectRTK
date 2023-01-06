@@ -20,7 +20,6 @@ const rootReducer = combineReducers({
   product: productReducer,
   cart: persistReducer(cartPersistConfig, cartReducer),
   auth: authReducer,
-  //   auth: persistReducer(authPersistConfig, authReducer),
 });
 
 export default rootReducer;

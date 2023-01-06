@@ -19,7 +19,7 @@ const NotFound = () => {
                 marginLeft: "auto",
                 marginRight: "auto",
               }}
-              src="https://www.thol.com.vn/pub/media/wysiwyg/404image/404.png"
+              src="https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?w=2000"
               alt="404 page not found"
             />
           </p>
@@ -31,7 +31,7 @@ const NotFound = () => {
         <Col xs="3">
           <Link to="/">
             <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
+              src="https://www.thol.com.vn/wp-content/uploads/2023/01/Whey-RSP-banner.jpg"
               alt="whey tăng cơ giảm mỡ thol"
             />
           </Link>

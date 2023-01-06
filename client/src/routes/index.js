@@ -10,6 +10,7 @@ import ShoppingCart from "@/views/ShoppingCart";
 import Search from "@/views/Search";
 import NotFound from "@/views/NotFound";
 import DefaultLayout from "@/Layout/DefaultLayout";
+import ListProductByCategory from "@/views/ListProductByCategory";
 const publicRoutes = [
   {
     path: "/",
@@ -54,6 +55,11 @@ const publicRoutes = [
   {
     path: "/search/:search",
     component: Search,
+    layout: DefaultLayout,
+  },
+  {
+    path: "/category/:category",
+    component: ListProductByCategory,
     layout: DefaultLayout,
   },
   {

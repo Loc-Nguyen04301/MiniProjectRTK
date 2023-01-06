@@ -1,0 +1,83 @@
+.flash-sale-header {
+  margin-left: 50px;
+  display: flex;
+  .flash-sale-image {
+    background: url(https://res.cloudinary.com/dupep1afe/image/upload/v1650097975/fb1088de81e42c4e538967ec12cb5caa_qksblh.png)
+      100% no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 114px;
+  }
+}
+
+.expired-notice {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
+
+.expired-notice > span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+}
+
+.expired-notice > p {
+  font-size: 1.5rem;
+}
+
+.show-counter {
+  margin-left: 2rem;
+}
+
+.show-counter .countdown-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  bottom: 6px;
+}
+
+.show-counter {
+  .countdown,
+  .countdown-danger {
+    line-height: 1.25rem;
+    padding: 0 0.75rem 0 0.75rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.show-counter .countdown-danger > p {
+  color: #ff0000;
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.show-counter .countdown-danger > span {
+  color: #ff0000;
+  margin: 0 !important;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+}
+
+.show-counter .countdown > p {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+}

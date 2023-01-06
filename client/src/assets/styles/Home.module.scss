@@ -1,8 +1,3 @@
-.list-image {
-  width: fit-content !important;
-  padding-left: 0px !important;
-}
-
 h2[class="from-blog"] {
   // border-bottom: 2px solid #e8e8e8;
   font-size: 138.5%;
@@ -73,12 +68,7 @@ img {
   .category-news-box {
     position: relative;
     margin-top: 50px;
-  }
-  .blog-inner .blog-content {
-    margin: 10px 0;
-    color: rgb(34, 34, 34);
-    font-size: 107.7%;
-    font-weight: 700;
+    display: flex;
   }
 }
 

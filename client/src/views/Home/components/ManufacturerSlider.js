@@ -6,55 +6,55 @@ const handleDragStart = (e) => e.preventDefault();
 
 const imagesBrandSlider = [
   <img
-    src="https://www.thol.com.vn/media/magentothem/brandslider/thol-135.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/media/magentothem/brandslider/LABRADA.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/media/magentothem/brandslider/rsplogo.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/media/magentothem/brandslider/nutrex.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/pub/media/wysiwyg/brand/evogen_1.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/media/magentothem/brandslider/san.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/pub/media/wysiwyg/home/Untitled-1.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/pub/media/wysiwyg/home/sole-fitness.jpg"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"
   />,
   <img
-    src="https://www.thol.com.vn/pub/media/wysiwyg/home/logo-spirit.png"
+    src="https://cdn.shopify.com/s/files/1/1973/8173/files/logo_322a0bfd-1ab0-4d7a-bce0-429a76e80583.png?height=628&pad_color=fff&v=1635522939&width=1200"
     onDragStart={handleDragStart}
     alt=""
     role="presentation"

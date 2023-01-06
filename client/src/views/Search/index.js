@@ -17,7 +17,7 @@ let cx = classNames.bind(styles);
 
 const Search = () => {
   const [searchProducts, setSearchProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { search: searchByName } = useParams();
 
   useEffect(() => {
@@ -26,7 +26,6 @@ const Search = () => {
         const res = await ProductService.getByName(searchByName);
         setSearchProducts(res.data.products);
         setLoading(false);
-        console.log(res.data.products);
       };
 
       setTimeout(() => {
@@ -54,7 +53,7 @@ const Search = () => {
         <Col xs="3">
           <Link to="/">
             <img
-              src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
+              src="https://www.thol.com.vn/wp-content/uploads/2023/01/Whey-RSP-banner.jpg"
               alt="whey tăng cơ giảm mỡ thol"
             />
           </Link>

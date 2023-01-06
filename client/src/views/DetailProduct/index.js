@@ -8,6 +8,8 @@ import { Button } from "reactstrap";
 import { useParams, Link } from "react-router-dom";
 import { addItem, removeItem } from "@/redux/cart";
 import { useDispatch, useSelector } from "react-redux";
+import SocialShare from "./components/SocialShare";
+import ProductSlider from "./components/ProductSlider";
 
 let cx = classNames.bind(styles);
 
@@ -36,9 +38,9 @@ const DetailProduct = () => {
   };
 
   return (
-    <div>
+    <>
       {currentProduct ? (
-        <Container>
+        <Container className="my-5">
           <div className={cx("breadcrumbs")}>
             <a href="/">
               <span className={cx("home")}>Trang chủ</span>
@@ -50,15 +52,16 @@ const DetailProduct = () => {
             <Col xs="3">
               <Link to="/">
                 <img
-                  src="https://www.thol.com.vn/pub/media/wysiwyg/banner/Whey-RSP-banner.jpg"
-                  alt=""
+                  src="https://www.thol.com.vn/wp-content/uploads/2023/01/Whey-RSP-banner.jpg"
+                  alt="banner-left"
                 />
               </Link>
             </Col>
             <Col xs="9">
               <Row>
                 <Col xs="6">
-                  <img src={currentProduct.img} alt="" />
+                  {/* <img src={currentProduct.img} alt="current_image" /> */}
+                  <ProductSlider image={currentProduct.img} />
                 </Col>
                 <Col xs="6">
                   <div className={cx("info-detail-container")}>
@@ -121,16 +124,53 @@ const DetailProduct = () => {
                         </span>
                       </Button>
                     </div>
+                    <div className="my-5">
+                      <SocialShare />
+                    </div>
                   </div>
                 </Col>
               </Row>
+            </Col>
+          </Row>
+          <Row>
+            <Col></Col>
+            <Col xs="8">
+              <p>
+                <a
+                  class="btn btn-primary"
+                  data-bs-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  Link with href
+                </a>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseExample"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
+                  Button with data-bs-target
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  Some placeholder content for the collapse component. This
+                  panel is hidden by default but revealed when the user
+                  activates the relevant trigger.
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 };
 

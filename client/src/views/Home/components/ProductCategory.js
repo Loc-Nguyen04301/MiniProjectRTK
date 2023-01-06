@@ -4,19 +4,26 @@ import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import { useSelector } from "react-redux";
+import FlashSale from "./FlashSale";
+import { targetDate } from "@/assets/datas/FlashSaleTime";
 
 let cx = classNames.bind(styles);
 
 const ProductCategory = ({ category }) => {
   const products = useSelector((state) => state.product);
-  const productsByCategory = products.filter(
-    (product) => product.category === category
+  const productsByCategory = products.filter((product) =>
+    product.category.includes(category)
   );
 
   return (
     <Row className={cx("news-category-container")}>
       <div className={cx("category-news-box")}>
         <h2 className="from-blog">{category}</h2>
+        {category === "SẢN PHẨM KHUYẾN MÃI" ? (
+          <FlashSale targetDate={targetDate} />
+        ) : (
+          ""
+        )}
       </div>
       {productsByCategory.map((product) => (
         <Col xs="3" key={product.id}>

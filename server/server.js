@@ -2,46 +2,27 @@
 require("dotenv").config();
 
 const express = require("express");
+var compression = require("compression");
 const cors = require("cors");
 const app = express();
 var corsOptions = {
   origin: "http://localhost:8081",
+  credentials: true,
 };
-//  tương tác client với server
+
+// interact client to  server
 app.use(cors(corsOptions));
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+// compress all responses
+app.use(compression());
 
-// Import Routes
-const authRoute = require("./routes/authRoute");
-const productRoute = require("./routes/productRoute");
-//Mount Route
-app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/product", productRoute);
-//handler Route
-const { errorHandler } = require("./middlewares/errorHandler");
-app.all("*", (req, res, next) => {
-  const err = new Error("The Route can't be found");
-  err.statusCode = 404;
-  next(err);
-  // chuyen xuong errorHandle de xy ly
-});
-app.use(errorHandler);
-
-
-
-//connect DB
-const db = require("./models");
-db.sequelize
-  .sync()
-  .then(() => {
-    console.log("Synced db.");
-  })
-  .catch((err) => {
-    console.log("Failed to sync db: " + err.message);
-  });
+const initRoutes = require("./src/routes");
+const connectDatabase = require("./src/config/connectDatabase");
+initRoutes(app);
+connectDatabase();
 
 // set Port
 const port = process.env.PORT || 8080;
