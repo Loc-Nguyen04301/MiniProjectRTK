@@ -1,9 +1,9 @@
 import React from "react";
-import SimpleImageSlider from "react-simple-image-slider";
+// import SimpleImageSlider from "react-simple-image-slider";
 import { Col, Container, Row } from "reactstrap";
 import styles from "@/assets/styles/Home.module.scss";
 import classNames from "classnames/bind";
-import { imagesPosterSlider } from "@/assets/datas/dataSlider";
+// import { imagesPosterSlider } from "@/assets/datas/dataSlider";
 import ManufacturerSlider from "./components/ManufacturerSlider";
 import ProductCategory from "./components/ProductCategory";
 

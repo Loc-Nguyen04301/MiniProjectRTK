@@ -35,7 +35,7 @@ const Login = () => {
     try {
       const config = {
         method: "post",
-        url: "http://localhost:8080/api/v1/auth/login",
+        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/login`,
         data: data,
       };
       const response = await axios(config);

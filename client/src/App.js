@@ -33,7 +33,7 @@ const App = () => {
       const token = localStorage.getItem("token");
       const option = {
         method: "get",
-        url: "http://localhost:8080/api/v1/auth",
+        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/auth`,
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -34,7 +34,7 @@ const Register = () => {
     try {
       const config = {
         method: "post",
-        url: "http://localhost:8080/api/v1/auth/register",
+        url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/register`,
         data: data,
       };
       const response = await axios(config);
