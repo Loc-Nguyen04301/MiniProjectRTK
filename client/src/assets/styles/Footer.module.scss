@@ -7,21 +7,16 @@
 }
 
 .footer .footer-row1 .info {
-  display: flex;
   color: #fff;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
-  padding-left: 4rem;
-  padding-top: 1rem;
+  padding: 0 1rem;
 }
 
-.footer .footer-row1 .info.info1 {
-  border-left: 0px;
-}
-
-.footer .footer-row1 .info span {
+.footer .footer-row1 .info h1 {
   text-transform: uppercase;
   font-weight: 700;
   line-height: 100%;
+  font-size: 1.8rem;
 }
 
 .footer .footer-row1 .info p {
@@ -91,7 +86,6 @@
   border: none;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
-  width: 400px;
 }
 
 .footer .footer-row2 .footer-cate-w button {

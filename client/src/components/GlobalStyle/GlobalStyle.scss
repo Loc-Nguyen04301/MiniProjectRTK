@@ -13,7 +13,7 @@
 }
 
 html {
-  font-size: 50%;
+  font-size: 8px;
 }
 
 body {
@@ -43,10 +43,6 @@ a {
 
 .MenuItem {
   color: black;
-}
-
-.activated {
-  border-bottom: 1px solid var(--primary-color);
 }
 
 .btn.disabled {
@@ -97,6 +93,5 @@ a {
 }
 
 .dropdown-menu.show {
-  width: 250px;
   padding: 0px;
 }

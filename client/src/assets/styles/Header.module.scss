@@ -18,10 +18,14 @@
         display: none;
       }
     }
+    .wishlist-cart {
+      display: none;
+    }
   }
 }
 
 .header {
+  width: 100%;
   .header-top {
     .left {
       width: 50%;
@@ -32,6 +36,7 @@
       justify-content: space-evenly;
     }
   }
+  
 }
 
 a {
@@ -99,7 +104,7 @@ a span:hover {
 
 .dropdown-btn {
   height: 6.2rem;
-  width: 250px;
+  width: 100%;
 }
 
 .text-dropdown {
@@ -125,33 +130,40 @@ input[type="text"]:focus ~ .list-product {
   display: block;
 }
 
-.list-product {
-  width: 558px;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.03);
-  .item-product-container {
-    &:hover {
-      background-color: rgba(7, 6, 6, 0.03);
-      cursor: pointer;
-    }
-    display: flex;
-    border-bottom: 1px solid #e8e8e8;
-    height: 50px;
-    align-items: center;
-    justify-content: space-between;
-    img {
-      margin-left: 20px;
-      height: 40px;
-      border-radius: 99px;
-    }
-    div {
-      color: #111;
-      font-weight: 500;
-    }
-    span {
-      margin-right: 20px;
-      color: #111;
-      font-weight: 600;
+.list-product-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 10000;
+
+  .list-product {
+    width: 558px;
+    margin: auto;
+    background-color: #ebe6e6;
+    opacity: 0.9;
+    .item-product-container {
+      &:hover {
+        background-color: rgba(7, 6, 6, 0.03);
+        cursor: pointer;
+      }
+      display: flex;
+      border-bottom: 1px solid #e8e8e8;
+      height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        margin-left: 20px;
+        height: 40px;
+        border-radius: 99px;
+      }
+      div {
+        color: #111;
+        font-weight: 500;
+      }
+      span {
+        margin-right: 20px;
+        color: #111;
+        font-weight: 600;
+      }
     }
   }
 }
@@ -236,7 +248,7 @@ input::-webkit-input-placeholder {
     border-bottom: 1px solid #e8e8e8;
     min-width: 248px;
   }
-  .list-item:hover{
+  .list-item:hover {
     background-color: #e8e8e8;
   }
   .list-item:active {

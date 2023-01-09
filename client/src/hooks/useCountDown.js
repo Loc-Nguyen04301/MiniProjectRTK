@@ -28,7 +28,7 @@ const useCountDown = (targetDate) => {
       clearInterval(interval);
     };
   }, [countDownDate]);
-  console.log(countDown);
+
   return [...getReturnValues(countDown), countDown];
 };
 

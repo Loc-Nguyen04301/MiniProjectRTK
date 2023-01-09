@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import styles from "@/assets/styles/DetailProduct.module.scss";
 import { Container, Row, Col } from "reactstrap";
@@ -8,26 +8,25 @@ import { Button } from "reactstrap";
 import { useParams, Link } from "react-router-dom";
 import { addItem, removeItem } from "@/redux/cart";
 import { useDispatch, useSelector } from "react-redux";
+import ProductService from "@/service/ProductService";
+
 import SocialShare from "./components/SocialShare";
 import ProductSlider from "./components/ProductSlider";
+import DescriptionReview from "./components/DescriptionReview";
+import RelatedProducts from "./components/RelatedProducts";
 
 let cx = classNames.bind(styles);
 
 const DetailProduct = () => {
   let { name } = useParams();
-  const products = useSelector((state) => state.product);
-  const currentProduct = products.find((item) => item.name === name);
+  // const products = useSelector((state) => state.product);
+  // const currentProduct = products.find((item) => item.name === name);
+  const [currentProduct, setCurrentProduct] = useState();
+  const [reviews, setReviews] = useState();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const currentItem = cartItems?.find((item) => item.name === name);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
 
   const handleAddItem = (product) => {
     dispatch(addItem(product));
@@ -37,10 +36,27 @@ const DetailProduct = () => {
     dispatch(removeItem(product));
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  useEffect(() => {
+    const fetchingData = async () => {
+      const res = await ProductService.getByName(name);
+      console.log(res.data);
+      setReviews(res.data.reviews);
+      setCurrentProduct(res.data.products[0]);
+    };
+    fetchingData();
+  }, [name]);
+
   return (
     <>
       {currentProduct ? (
-        <Container className="my-5">
+        <Container className="py-5">
           <div className={cx("breadcrumbs")}>
             <a href="/">
               <span className={cx("home")}>Trang chủ</span>
@@ -133,37 +149,13 @@ const DetailProduct = () => {
             </Col>
           </Row>
           <Row>
-            <Col></Col>
-            <Col xs="8">
-              <p>
-                <a
-                  class="btn btn-primary"
-                  data-bs-toggle="collapse"
-                  href="#collapseExample"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  Link with href
-                </a>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
-                  Button with data-bs-target
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                  Some placeholder content for the collapse component. This
-                  panel is hidden by default but revealed when the user
-                  activates the relevant trigger.
-                </div>
-              </div>
+            <Col xs="1"></Col>
+            <Col xs="11" style={{ marginTop: "50px" }}>
+              <DescriptionReview
+                currentProduct={currentProduct}
+                reviews={reviews}
+              />
+              <RelatedProducts currentProduct={currentProduct} />
             </Col>
           </Row>
         </Container>

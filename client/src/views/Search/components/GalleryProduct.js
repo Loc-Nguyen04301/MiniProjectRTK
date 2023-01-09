@@ -9,7 +9,7 @@ let cx = classNames.bind(styles);
 
 function Items({ currentProducts }) {
   return (
-    <Row style={{ marginTop: "40px" }}>
+    <Row style={{ paddingTop: "40px" }}>
       {currentProducts &&
         currentProducts.map((product) => (
           <Col xs="4" key={product.id}>

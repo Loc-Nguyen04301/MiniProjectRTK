@@ -12,26 +12,31 @@ let cx = classNames.bind(styles);
 const Home = () => {
   return (
     <Container>
-      <Row className="justify-content-center my-5">
-        <SimpleImageSlider
-          width={650}
-          height={510}
-          images={imagesPosterSlider}
-          showBullets={true}
-          showNavs={true}
-        />
-      </Row>
+      {/* <Row style={{ paddingTop: "40px" }}>
+        <Col xs="12" style={{ display: "flex", justifyContent: "center" }}>
+          <SimpleImageSlider
+            width={"800px"}
+            height={"510px"}
+            images={imagesPosterSlider}
+            showBullets={true}
+            showNavs={true}
+            autoPlay
+          />
+        </Col>
+      </Row> */}
       <Row className={cx("poster-main")}>
         <Col xs="6">
           <img
             src="https://www.thol.com.vn/wp-content/uploads/2023/01/Vitadapt-1-hang-da-ve-1024x576.jpg"
             alt="VITAMIN KHOÁNG CHẤT SỐNG KHOẺ TẬP KHOẺ - Hàng ngon đã về, order ngay kẻo lỡ"
+            style={{ padding: "0 15px" }}
           />
         </Col>
         <Col xs="6">
           <img
             src="https://www.thol.com.vn/wp-content/uploads/2023/01/2021-06-18_titanium_GA_pancake-1024x576.jpg"
             alt="Titanium Isolate tặng Pancake"
+            style={{ padding: "0 15px" }}
           />
         </Col>
       </Row>
@@ -40,15 +45,14 @@ const Home = () => {
       <ProductCategory category={"NĂNG LƯỢNG & SỨC KHỎE"} />
       <ProductCategory category={"GIẢM MỠ & GIẢM CÂN"} />
       <Row className={cx("banner-container")}>
-        <a href="/">
+        <a href="/" className={cx("banner-image")}>
           <img
-            style={{ marginLeft: "50px" }}
             src="https://www.thol.com.vn/wp-content/uploads/2023/01/home-bottom-banner-wide-1024x193.jpg"
             alt="banner-thol"
           />
         </a>
       </Row>
-      <Row className="m-5 d-flex align-items-center">
+      <Row className="d-flex align-items-center pb-5">
         <ManufacturerSlider />
       </Row>
     </Container>

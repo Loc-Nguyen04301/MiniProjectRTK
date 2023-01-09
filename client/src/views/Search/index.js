@@ -49,7 +49,7 @@ const Search = () => {
         </span>
       </div>
 
-      <Row style={{ marginBottom: "80px" }}>
+      <Row style={{ paddingBottom: "80px" }}>
         <Col xs="3">
           <Link to="/">
             <img

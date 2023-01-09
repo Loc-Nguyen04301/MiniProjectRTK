@@ -26,40 +26,62 @@ const Footer = () => {
   return (
     <div className={cx("footer")}>
       <div className={cx("footer-row1")}>
-        <Container className="d-flex justify-content-between p-5">
-          <div className={cx("info")}>
-            <FontAwesomeIcon icon={faTruck} size={"2xl"} />
-            <div className="mx-4">
-              <span>Vận chuyển nhanh</span>
-              <p>miễn phí đơn hàng từ 500k</p>
+        <Container>
+          <div className="d-flex justify-content-between p-5">
+            <div className={cx("info")}>
+              <div className="mx-4">
+                <FontAwesomeIcon
+                  style={{ padding: "5px 0px " }}
+                  icon={faTruck}
+                  size={"2xl"}
+                />
+                <h1>Vận chuyển nhanh</h1>
+                <p>miễn phí đơn hàng từ 500k</p>
+              </div>
             </div>
-          </div>
-          <div className={cx("info")}>
-            <FontAwesomeIcon icon={faMoneyBill} size={"2xl"} />
-            <div className="mx-4">
-              <span>Thanh toán dễ dàng</span>
-              <p>COD, chuyển khoản</p>
+            <div className={cx("info")}>
+              <div className="mx-4">
+                <FontAwesomeIcon
+                  style={{ padding: "5px 0px " }}
+                  icon={faMoneyBill}
+                  size={"2xl"}
+                />
+                <h1>Thanh toán dễ dàng</h1>
+                <p>COD, chuyển khoản</p>
+              </div>
             </div>
-          </div>
-          <div className={cx("info")}>
-            <FontAwesomeIcon icon={faGift} size={"2xl"} />
-            <div className="mx-4">
-              <span>Nhiều ưu đãi</span>
-              <p>Khách hàng mới</p>
+            <div className={cx("info")}>
+              <div className="mx-4">
+                <FontAwesomeIcon
+                  style={{ padding: "5px 0px " }}
+                  icon={faGift}
+                  size={"2xl"}
+                />
+                <h1>Nhiều ưu đãi</h1>
+                <p>Khách hàng mới</p>
+              </div>
             </div>
-          </div>
-          <div className={cx("info")}>
-            <FontAwesomeIcon icon={faPhone} size={"2xl"} />
-            <div className="mx-4">
-              <span>Gọi ngay</span>
-              <p>1900.2050</p>
+            <div className={cx("info")}>
+              <div className="mx-4">
+                <FontAwesomeIcon
+                  style={{ padding: "5px 0px " }}
+                  icon={faPhone}
+                  size={"2xl"}
+                />
+                <h1>Gọi ngay</h1>
+                <p>1900.2050</p>
+              </div>
             </div>
-          </div>
-          <div className={cx("info")}>
-            <FontAwesomeIcon icon={faUser} size={"2xl"} />
-            <div className="mx-4">
-              <span>Khách hàng VIP</span>
-              <p>Tích điểm đổi quà</p>
+            <div className={cx("info")}>
+              <div className="mx-4">
+                <FontAwesomeIcon
+                  style={{ padding: "5px 0px " }}
+                  icon={faUser}
+                  size={"2xl"}
+                />
+                <h1>Khách hàng VIP</h1>
+                <p>Tích điểm đổi quà</p>
+              </div>
             </div>
           </div>
         </Container>
@@ -253,8 +275,11 @@ const Footer = () => {
               <div className={cx("footer-cate-w") + ` p-5`}>
                 <div className={cx("footer-newsletter") + ` d-flex`}>
                   <p>ĐĂNG KÍ NHẬN BẢN TIN </p>
-                  <form className="d-flex">
-                    <input placeholder="Nhập địa chỉ email của bạn" />
+                  <form className="d-flex w-75">
+                    <input
+                      placeholder="Nhập địa chỉ email của bạn"
+                      className="w-100"
+                    />
                     <button className="px-4">Đăng kí theo dõi</button>
                   </form>
                 </div>

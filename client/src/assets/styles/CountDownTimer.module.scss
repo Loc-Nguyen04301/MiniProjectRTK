@@ -1,12 +1,13 @@
 .flash-sale-header {
-  margin-left: 50px;
+  padding-left: 50px;
   display: flex;
+  width: 50%;
   .flash-sale-image {
     background: url(https://res.cloudinary.com/dupep1afe/image/upload/v1650097975/fb1088de81e42c4e538967ec12cb5caa_qksblh.png)
       100% no-repeat;
     background-size: contain;
     height: 30px;
-    width: 114px;
+    width: 25%;
   }
 }
 

@@ -156,49 +156,24 @@ const Header = () => {
                   <div className="menu-horizontal w-50">
                     <Nav fill>
                       <NavItem>
-                        <NavLink
-                          to="/"
-                          className={({ isActive }) =>
-                            cx("nav-link") +
-                            " " +
-                            (isActive ? cx("activated") : "")
-                          }
-                        >
+                        <NavLink to="/" className={cx("nav-link")}>
                           <span> Trang chủ </span>
                         </NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink
-                          to="/gioi-thieu"
-                          className={({ isActive }) =>
-                            cx("nav-link") +
-                            " " +
-                            (isActive ? cx("activated") : "")
-                          }
-                        >
+                        <NavLink to="/gioi-thieu" className={cx("nav-link")}>
                           <span>Giới thiệu </span>
                         </NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink
-                          to="/lien-he"
-                          className={({ isActive }) =>
-                            cx("nav-link") +
-                            " " +
-                            (isActive ? cx("activated") : "")
-                          }
-                        >
+                        <NavLink to="/lien-he" className={cx("nav-link")}>
                           <span>Liên hệ</span>
                         </NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink
                           to="/tai-khoan-ngan-hang"
-                          className={({ isActive }) =>
-                            cx("nav-link") +
-                            " " +
-                            (isActive ? cx("activated") : "")
-                          }
+                          className={cx("nav-link")}
                         >
                           <span>Tài khoản ngân hàng </span>
                         </NavLink>
@@ -299,7 +274,6 @@ const Header = () => {
                         className={cx("btn-custom")}
                         onClick={handleSearchClick}
                         disabled={loading}
-                        style={{ width: "60px" }}
                       >
                         {loading ? (
                           <Spinner
@@ -342,8 +316,9 @@ const Header = () => {
           </Container>
         </div>
       </div>
+      {/* dropdown List search product */}
       {searchProducts?.length > 0 ? (
-        <>
+        <div className={cx("list-product-wrapper")}>
           <ul className={cx("list-product")}>
             {searchProducts.map((item) => (
               <li
@@ -361,7 +336,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
-        </>
+        </div>
       ) : (
         <></>
       )}

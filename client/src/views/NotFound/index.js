@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <Container>
-      <Row style={{ margin: " 50px 0px" }}>
+      <Row style={{ padding: "50px 0px" }}>
         <Col xs="9">
           <div>
             <h1 style={{ textAlign: "center" }}>
@@ -14,11 +14,6 @@ const NotFound = () => {
           </div>
           <p>
             <img
-              style={{
-                display: "block",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
               src="https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?w=2000"
               alt="404 page not found"
             />

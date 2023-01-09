@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 30%;
     font-size: 3rem;
   }
   .quantity-minus,
@@ -55,7 +55,7 @@
     height: 30px;
     padding: 0 9px;
     margin-bottom: 5px;
-    margin-left: 2px
+    margin-left: 2px;
   }
   .add-product {
     background-color: var(--primary-color);
@@ -92,5 +92,52 @@
       font-size: 2.4rem;
       font-weight: 400;
     }
+  }
+}
+
+.according {
+  .according-description,
+  .according-review {
+    .according-title {
+      border-top: 1px solid #ddd;
+      display: block;
+      color: #7d7d7d !important;
+      font-size: 15px;
+      padding: 10px 25px;
+      &.active {
+        border-top: 1px solid var(--primary-color) !important;
+      }
+      svg {
+        position: relative;
+        right: 15px;
+      }
+      svg {
+        &.active {
+          transform: rotate(180deg);
+          transition: transform 0.4s;
+        }
+      }
+    }
+    .active {
+      background-color: rgba(0, 0, 0, 0.03);
+      color: var(--primary-color) !important;
+      font-weight: 500;
+    }
+  }
+
+  .according-review {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .comments {
+    padding-left: 20px;
+    .review-container {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0px;
+    }
+  }
+
+  .review-form {
   }
 }

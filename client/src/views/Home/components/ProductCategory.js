@@ -26,7 +26,7 @@ const ProductCategory = ({ category }) => {
         )}
       </div>
       {productsByCategory.map((product) => (
-        <Col xs="3" key={product.id}>
+        <Col xl="3" lg="3" md="4" sm="6" xs="6" key={product.id}>
           <div className={cx("box-product")}>
             <Link to={`/detail/${product.name}`}>
               <img src={product.img} alt="" />
