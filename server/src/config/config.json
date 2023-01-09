@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "thol",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "postgres",
+    "password": "miniproject-postgres",
+    "database": "postgres",
+    "host": "db.qjjyaryrbpbwyptelpnf.supabase.co",
+    "dialect": "postgres",
+    "port": "5432"
   },
   "test": {
     "username": "root",
