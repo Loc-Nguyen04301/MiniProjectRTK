@@ -73,12 +73,13 @@ const DetailProduct = () => {
                 />
               </Link>
             </Col>
-            <Col xs="9">
+            <Col xs="1"></Col>
+            <Col xs="8">
               <Row>
-                <Col xs="6">
-                  {/* <img src={currentProduct.img} alt="current_image" /> */}
+                <Col xs="5">
                   <ProductSlider image={currentProduct.img} />
                 </Col>
+                <Col xs="1"></Col>
                 <Col xs="6">
                   <div className={cx("info-detail-container")}>
                     <h1 className={cx("title-product")}>{name}</h1>
@@ -96,26 +97,30 @@ const DetailProduct = () => {
                       )}
                     </div>
                     <div>{currentProduct.description}</div>
-                    <div className="d-flex my-5">
-                      <span className={cx("number-product")}>
-                        <span
+                    <div className="d-flex w-75 align-items-center">
+                      <div
+                        className={cx("number-product")}
+                        style={{ height: "30px" }}
+                      >
+                        <input
                           className={cx("quantity-minus")}
+                          value="-"
                           onClick={() => handleRemoveItem(currentProduct)}
-                        >
-                          -
-                        </span>
-                        <span className={cx("display-number")}>
-                          {currentItem?.quantity >= 0
-                            ? currentItem.quantity
-                            : 0}
-                        </span>
-                        <span
+                        />
+                        <input
+                          className={cx("display-number")}
+                          value={
+                            currentItem?.quantity >= 0
+                              ? currentItem.quantity
+                              : 0
+                          }
+                        />
+                        <input
                           className={cx("quantity-plus")}
+                          value="+"
                           onClick={() => handleAddItem(currentProduct)}
-                        >
-                          +
-                        </span>
-                      </span>
+                        />
+                      </div>
                       <Button type="submit" className={cx("add-product")}>
                         <span className={cx("add-product-text")}>
                           Thêm vào giỏ hàng
@@ -155,8 +160,14 @@ const DetailProduct = () => {
                 currentProduct={currentProduct}
                 reviews={reviews}
               />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="1"></Col>
+            <Col xs="10">
               <RelatedProducts currentProduct={currentProduct} />
             </Col>
+            <Col xs="1"></Col>
           </Row>
         </Container>
       ) : (

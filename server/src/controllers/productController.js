@@ -1,6 +1,7 @@
 const db = require("../models");
 const Product = db.Product;
 const Review = db.Review;
+const User = db.User;
 const { Op } = require("sequelize");
 const { QueryTypes } = require("sequelize");
 const { sequelize } = require("../models");
@@ -25,22 +26,23 @@ exports.findByName = async (req, res, next) => {
     const name = req.params.name;
     var condition = { name: { [Op.like]: `%${name}%` } };
     const products = await Product.findAll({ where: condition });
-    // return reviews if products == 1
-    // const reviews =
-    //   products.length === 1
-    //     ? await sequelize.query(
-    //         `SELECT title,description,star,name,reviews.createdAt FROM reviews,users WHERE product_id=${products[0].id}`,
-    //         { type: QueryTypes.SELECT }
-    //       )
-    //     : null;
 
     const reviews =
-      products.length === 1 ? await products[0].getReviews() : null;
+      products.length === 1
+        ? await sequelize.query(
+            `SELECT title,description,star,name,"Reviews"."createdAt" from "Reviews","Users" WHERE product_id=${products[0].id}`,
+            { type: QueryTypes.SELECT }
+          )
+        : null;
+
+    // const reviews =
+    //   products.length === 1 ? await products[0].getReviews() : null;
     if (!products.length) {
       res.status(200).json({
         message: `Không tìm thấy sản phẩm có tên ${name}`,
       });
     } else {
+      const userName = reviews
       res.status(200).json({
         status: "success",
         products,

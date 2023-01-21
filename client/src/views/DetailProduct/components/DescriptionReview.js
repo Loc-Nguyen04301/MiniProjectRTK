@@ -111,7 +111,7 @@ const DescriptionReview = ({ reviews }) => {
         </a>
         <Row>
           <div
-            className="collapse multi-collapse pt-5"
+            className="collapse multi-collapse py-5"
             id="multiCollapseExample2"
           >
             <div className={cx("comments")}>

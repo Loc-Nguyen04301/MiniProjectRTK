@@ -8,35 +8,19 @@ let cx = classNames.bind(styles);
 const RelatedProducts = ({ currentProduct }) => {
   const settings = {
     infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //   },
+    //   {
+    //     breakpoint: 600,
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //   },
+    // ],
   };
 
   const category = currentProduct.category;
@@ -56,14 +40,24 @@ const RelatedProducts = ({ currentProduct }) => {
       <h3>SẢN PHẨM TƯƠNG TỰ</h3>
       <Slider {...settings}>
         {relatedProducts?.map((item) => (
-          <div className="card" key={item.id}>
-            <div className="card-top">
+          <div key={item.id}>
+            <div>
               <img src={item.img} alt="abc" />
-              <h1>{item.title}</h1>
-            </div>
-            <div className="card-bottom">
-              <h3>{item.price}</h3>
-              <span className="category">{item.category}</span>
+              <h2 style={{ color: "#222", fontWeight: "400" }}>{item.name}</h2>
+              <span
+                style={{
+                  color: "#222",
+                  fontWeight: "500",
+                  textDecoration: "line-through",
+                }}
+              >
+                {item.old_price !== 0
+                  ? item.old_price.toLocaleString("vi") + "₫"
+                  : ""}
+              </span>{" "}
+              <span style={{ color: "#222", fontWeight: "500" }}>
+                {item.new_price.toLocaleString("vi") + "₫"}
+              </span>
             </div>
           </div>
         ))}

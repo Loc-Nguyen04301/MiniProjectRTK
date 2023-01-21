@@ -39,7 +39,7 @@ const Header = () => {
   const [searchProducts, setSearchProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const userName = useSelector((state) => state.auth.userName);
 
   const navigate = useNavigate();
@@ -75,6 +75,14 @@ const Header = () => {
   const handleNavigateCategory = (category) => {
     navigate(`/category/${category}`);
   };
+
+  const clickToCheckOut = () => {
+    navigate(`/gio-hang`);
+  };
+
+  const clickToDashBoard = () => {
+    navigate(`/dash-board`)
+  }
 
   useEffect(() => {
     try {
@@ -153,7 +161,10 @@ const Header = () => {
               </Col>
               <Col md="9" lg="9" className={cx("menu-list")}>
                 <div className="middle-right-nav d-flex justify-content-between pt-4">
-                  <div className="menu-horizontal w-50">
+                  <div
+                    className="menu-horizontal"
+                    style={{ minWidth: "350px" }}
+                  >
                     <Nav fill>
                       <NavItem>
                         <NavLink to="/" className={cx("nav-link")}>
@@ -194,7 +205,7 @@ const Header = () => {
         <div className={cx("header-bottom")}>
           <Container>
             <Row>
-              <Col lg="3" md="3" sm="4" xs="12" className={cx("sidebar-menu")}>
+              <Col lg="3" md="3" sm="4" className={cx("sidebar-menu")}>
                 <div className={cx("menu-content-sidebar")}>
                   <UncontrolledDropdown direction="down">
                     <DropdownToggle
@@ -252,13 +263,7 @@ const Header = () => {
                   </UncontrolledDropdown>
                 </div>
               </Col>
-              <Col
-                lg="9"
-                md="9"
-                sm="8"
-                xs="12"
-                className="d-flex justify-content-between"
-              >
+              <Col lg="9" md="9" sm="8" xs="12" className={cx("navbar-search")}>
                 <div className={cx("search-box")}>
                   <div className="input-group py-2">
                     <input
@@ -302,7 +307,7 @@ const Header = () => {
                   >
                     <FontAwesomeIcon icon={faShoppingCart} size={"xl"} />
                   </div>
-                  <div className={cx("total-item")}>{cartItems.length}</div>
+                  <div className={cx("total-item")}>{totalQuantity}</div>
                   {openCart ? (
                     <div className={cx("dropdown-cart")}>
                       <ShoppingCart />
@@ -310,6 +315,29 @@ const Header = () => {
                   ) : (
                     ""
                   )}
+                  <div className="d-flex">
+                    <Button
+                      color="danger"
+                      style={{
+                        height: "40px",
+                        fontSize: "1.3rem",
+                        width: "60px",
+                      }}
+                      onClick={clickToCheckOut}
+                    >
+                      Đặt hàng
+                    </Button>
+                    <Button
+                      color="primary"
+                      style={{
+                        height: "40px",
+                        fontSize: "1.3rem",
+                      }}
+                      onClick={clickToDashBoard}
+                    >
+                      Thống kê
+                    </Button>
+                  </div>
                 </div>
               </Col>
             </Row>

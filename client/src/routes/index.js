@@ -11,6 +11,9 @@ import Search from "@/views/Search";
 import NotFound from "@/views/NotFound";
 import DefaultLayout from "@/Layout/DefaultLayout";
 import ListProductByCategory from "@/views/ListProductByCategory";
+import Checkout from "@/views/Checkout";
+import DashBoard from "@/views/DashBoard";
+
 const publicRoutes = [
   {
     path: "/",
@@ -48,10 +51,21 @@ const publicRoutes = [
     layout: DefaultLayout,
   },
   {
-    path: "/thanh-toan",
+    path: "/gio-hang",
     component: ShoppingCart,
     layout: DefaultLayout,
   },
+  {
+    path: "/thanh-toan",
+    component: Checkout,
+    layout: DefaultLayout,
+  },
+  {
+    path: "/dash-board",
+    component: DashBoard,
+    layout: DefaultLayout,
+  },
+
   {
     path: "/search/:search",
     component: Search,

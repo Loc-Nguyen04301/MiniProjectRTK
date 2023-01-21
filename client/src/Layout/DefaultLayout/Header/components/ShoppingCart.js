@@ -4,7 +4,6 @@ import classNames from "classnames/bind";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import {
   Container,
   Button,
@@ -36,6 +35,7 @@ const WishListCart = () => {
       setOpenModal((prev) => !prev);
     }, 200);
   };
+
   return (
     <Container>
       {cartItems.length > 0 ? (
@@ -57,11 +57,9 @@ const WishListCart = () => {
                   </div>
                   <div className={cx("cart-icon-container")}>
                     <div className={cx("cart-icon")}>
-                      <FontAwesomeIcon
-                        icon={faPenToSquare}
-                        size={"lg"}
-                        onClick
-                      />
+                      <a href={`/detail/${item.name}`}>
+                        <FontAwesomeIcon icon={faPenToSquare} size={"lg"} />
+                      </a>
                     </div>
                     <div className={cx("cart-icon")}>
                       <FontAwesomeIcon
@@ -79,7 +77,10 @@ const WishListCart = () => {
                   </ModalBody>
                   <ModalFooter>
                     <Button
-                      style={{ backgroundColor:"var(--primary-color)" , borderColor:"var(--primary-color)"}}
+                      style={{
+                        backgroundColor: "var(--primary-color)",
+                        borderColor: "var(--primary-color)",
+                      }}
                       onClick={() => toggleModalAndRemoveItem(item)}
                     >
                       Đồng ý
@@ -99,9 +100,9 @@ const WishListCart = () => {
             </div>
           </div>
           <div className={cx("shopping-cart")}>
-            <Link to="/thanh-toan">
+            <a href="/gio-hang">
               <span>Giỏ hàng</span>
-            </Link>
+            </a>
           </div>
         </>
       ) : (

@@ -51,6 +51,9 @@
   .cart-icon {
     padding: 4px;
     color: #ccc;
+    & a {
+      color: #ccc !important;
+    }
   }
   .cart-icon:hover {
     color: var(--primary-color);

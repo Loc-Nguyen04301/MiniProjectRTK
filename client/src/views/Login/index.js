@@ -97,7 +97,9 @@ const Login = () => {
                 <Button type="submit" className={cx("button-submit")}>
                   <span className={cx("dang-nhap")}>Đăng nhập</span>
                 </Button>
-                <span>Bạn chưa có tài khoản ?</span>
+                <a href="/dang-ky">
+                  <span>Bạn chưa có tài khoản ?</span>
+                </a>
               </div>
             </form>
             <ToastContainer

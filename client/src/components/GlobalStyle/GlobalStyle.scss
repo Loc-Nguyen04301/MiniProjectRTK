@@ -77,21 +77,10 @@ a {
   }
 }
 
-.slider1 {
-  .slick-list {
-    margin: 0 auto;
-    max-width: 350px;
-  }
-}
-
-.slick-prev {
-  left: 12px;
-}
-
-.slick-next {
-  right: 12px;
-}
-
 .dropdown-menu.show {
   padding: 0px;
+}
+
+input:focus {
+  outline: none;
 }
