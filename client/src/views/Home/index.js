@@ -1,9 +1,9 @@
 import React from "react";
-// import SimpleImageSlider from "react-simple-image-slider";
+import SimpleImageSlider from "react-simple-image-slider";
 import { Col, Container, Row } from "reactstrap";
 import styles from "@/assets/styles/Home.module.scss";
 import classNames from "classnames/bind";
-// import { imagesPosterSlider } from "@/assets/datas/dataSlider";
+import { imagesPosterSlider } from "@/assets/datas/dataSlider";
 import ManufacturerSlider from "./components/ManufacturerSlider";
 import ProductCategory from "./components/ProductCategory";
 
@@ -12,7 +12,7 @@ let cx = classNames.bind(styles);
 const Home = () => {
   return (
     <Container>
-      {/* <Row style={{ paddingTop: "40px" }}>
+      <Row style={{ paddingTop: "40px" }}>
         <Col xs="12" style={{ display: "flex", justifyContent: "center" }}>
           <SimpleImageSlider
             width={"800px"}
@@ -23,7 +23,7 @@ const Home = () => {
             autoPlay
           />
         </Col>
-      </Row> */}
+      </Row>
       <Row className={cx("poster-main")}>
         <Col xs="6">
           <img

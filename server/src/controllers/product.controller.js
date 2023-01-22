@@ -42,7 +42,6 @@ exports.findByName = async (req, res, next) => {
         message: `Không tìm thấy sản phẩm có tên ${name}`,
       });
     } else {
-      const userName = reviews
       res.status(200).json({
         status: "success",
         products,

@@ -2,7 +2,7 @@ const {
   register,
   login,
   getCurrentUser,
-} = require("../controllers/authController");
+} = require("../controllers/auth.controller");
 const { checkCurrentUser } = require("../middlewares/checkCurrentUser");
 
 const express = require("express");

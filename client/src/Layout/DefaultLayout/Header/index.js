@@ -81,7 +81,7 @@ const Header = () => {
   };
 
   const clickToDashBoard = () => {
-    navigate(`/dash-board`)
+    navigate(`/dashboard`)
   }
 
   useEffect(() => {

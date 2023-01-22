@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
 import Hightcharts from "highcharts";
 import { Container } from "reactstrap";
+import CustomerAndBillService from "@/service/CustomerAndBillService";
 
-const generateOptions = () => {
+const generateOptions = (data) => {
+  const dataChart = data.map((item) => {
+    return [item.productName, Number(item.quantity)];
+  });
+
+  const total = data.reduce((total, item) => {
+    return total + Number(item.totalprice);
+  }, 0);
+
   return {
     chart: {
       type: "column",
@@ -14,6 +23,9 @@ const generateOptions = () => {
         fontSize: "30px",
         fontFamily: "Verdana, sans-serif",
       },
+    },
+    subtitle: {
+      text: `Tổng doanh thu: ${total.toLocaleString("vi")}₫`,
     },
     xAxis: {
       type: "category",
@@ -38,35 +50,13 @@ const generateOptions = () => {
       enabled: true,
     },
     tooltip: {
-      pointFormat: "Lượng sản phẩm đã bán ra  : <b>{point.y:.1f} </b>",
+      pointFormat: "Lượng sản phẩm đã bán ra  : <b>{point.y} </b>",
     },
     series: [
       {
         name: "Số lượng sản sản phẩm",
-        data: [
-          ["Tokyo", 37.33],
-          ["Delhi", 31.18],
-          ["Shanghai", 27.79],
-          ["Sao Paulo", 22.23],
-          ["Mexico City", 21.91],
-          ["Dhaka", 21.74],
-          ["Cairo", 21.32],
-          ["Beijing", 20.89],
-          ["Mumbai", 20.67],
-          ["Osaka", 19.11],
-          ["Karachi", 16.45],
-          ["Chongqing", 16.38],
-          ["Istanbul", 15.41],
-          ["Buenos Aires", 15.25],
-          ["Kolkata", 14.974],
-          ["Kinshasa", 14.97],
-          ["Lagos", 14.86],
-          ["Manila", 14.16],
-          ["Tianjin", 13.79],
-          ["Guangzhou", 13.64],
-        ],
+        data: dataChart,
         dataLabels: {
-          format: "{point.y:.1f}", // one decimal
           y: 0,
           style: {
             fontSize: "13px",
@@ -79,10 +69,20 @@ const generateOptions = () => {
 };
 
 const DashBoard = () => {
-  return (
+  const [customData, setCustomData] = useState();
+  useEffect(() => {
+    CustomerAndBillService.getAll().then((res) => setCustomData(res.data.data));
+  }, []);
+
+  return customData ? (
     <Container style={{ padding: "50px 0" }}>
-      <HighchartsReact highcharts={Hightcharts} options={generateOptions()} />
+      <HighchartsReact
+        highcharts={Hightcharts}
+        options={generateOptions(customData)}
+      />
     </Container>
+  ) : (
+    <></>
   );
 };
 

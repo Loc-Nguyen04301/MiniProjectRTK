@@ -61,7 +61,7 @@ const publicRoutes = [
     layout: DefaultLayout,
   },
   {
-    path: "/dash-board",
+    path: "/dashboard",
     component: DashBoard,
     layout: DefaultLayout,
   },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import ReactPaginate from "react-paginate";
 import { Col, Row } from "reactstrap";
 import { Link } from "react-router-dom";
@@ -18,7 +18,10 @@ function Items({ currentProducts }) {
                 <img src={product.img} alt="" />
               </Link>
               <h3>
-                <Link to={`/detail/${product.name}`} className="text-center mt-3">
+                <Link
+                  to={`/detail/${product.name}`}
+                  className="text-center mt-3"
+                >
                   {product.name}
                 </Link>
               </h3>
@@ -91,4 +94,4 @@ const GalleryProduct = ({ searchProducts, itemsPerPage }) => {
   );
 };
 
-export default GalleryProduct;
+export default memo(GalleryProduct);

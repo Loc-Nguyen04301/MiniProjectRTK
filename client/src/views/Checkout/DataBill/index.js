@@ -8,6 +8,7 @@ import { resetCart } from "@/redux/cart";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { exportToCSV } from "@/features/ExportDataToExcel";
+import CustomerAndBillService from "@/service/CustomerAndBillService";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -19,13 +20,12 @@ const schema = yup.object().shape({
 const fileCustomName = "thongtinkhachhang";
 
 const DataBill = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const cartInfo = cartItems.map((item) => ({
-    "Tên sản phẩm": item.name,
-    "Số lượng": item.quantity,
-    "Ngày mua hàng": new Date(),
+  var cartItems = useSelector((state) => state.cart.cartItems);
+  cartItems = cartItems.map((item) => ({
+    name: item.name,
+    quantity: item.quantity,
+    totalPrice: item.totalPrice,
   }));
-
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,7 +37,11 @@ const DataBill = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
+    //data
     if (totalAmount) {
+      //create and save bill in DB
+      CustomerAndBillService.create({ ...data, cartItems });
+      //export data to EXCEL
       exportToCSV(
         [
           {
@@ -45,12 +49,10 @@ const DataBill = () => {
             Email: data.email,
             "Số điện thoại": data.phoneNumber,
             "Ngày mua hàng": new Date(),
-            "Hóa đơn": cartInfo,
           },
         ],
         fileCustomName
       );
-      // exportToCSV(cartInfo, fileCartName);
       localStorage.removeItem("persist:cart");
       dispatch(resetCart());
       navigate(0);
