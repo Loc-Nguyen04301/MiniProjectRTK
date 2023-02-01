@@ -30,7 +30,7 @@ const Search = () => {
 
       setTimeout(() => {
         fetchingData();
-      }, 2000);
+      }, 500);
       setLoading(true);
     } catch (e) {
       setLoading(true);

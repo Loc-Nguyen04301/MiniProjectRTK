@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import { useSelector } from "react-redux";
 import FlashSale from "./FlashSale";
-import { targetDate } from "@/assets/datas/FlashSaleTime";
+import { targetDate } from "@/assets/data/FlashSaleTime";
 
 let cx = classNames.bind(styles);
 

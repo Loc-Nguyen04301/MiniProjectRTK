@@ -53,7 +53,8 @@ const Register = () => {
         formRef.current.reset();
       }, 3000);
     } catch (error) {
-      toast.error(`${error.response.data.message}`, {
+      console.log(error.response.data.message);
+      toast.error(`${error.response.data}`, {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
