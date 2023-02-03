@@ -9,7 +9,6 @@ import {
   faLocationDot,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import ReactHookForm from "@/features/ReactHookForm";
 import { Link } from "react-router-dom";
 
 let cx = classNames.bind(styles);
@@ -87,14 +86,6 @@ const Contact = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
-              </Col>
-              <Col xs="8">
-                <div className={cx("contact-info")}>
-                  <div className={cx("title-bonus-page")}>
-                    <h2>GỬI LỜI NHẮN</h2>
-                  </div>
-                  <ReactHookForm />
                 </div>
               </Col>
             </Row>

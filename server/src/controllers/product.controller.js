@@ -12,7 +12,7 @@ exports.create = async (req, res, next) => {
     .then((data) => {
       if (data) {
         res.status(200).json({
-          status: "success",
+          status: "Add Product Successfully",
           data,
         });
       }
@@ -97,7 +97,7 @@ exports.update = async (req, res, next) => {
       if (data) {
         res.status(200).json({
           status: "success",
-          message: "Update succesfully",
+          message: "Update Successfully",
         });
       } else {
         const err = new Error(`Can't update product with ${id}`);

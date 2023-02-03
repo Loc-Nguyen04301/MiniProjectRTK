@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HighchartsReact from "highcharts-react-official";
 import Hightcharts from "highcharts";
-import { Container } from "reactstrap";
 import CustomerAndBillService from "@/service/CustomerAndBillService";
 
 const generateOptions = (data) => {
@@ -68,22 +67,22 @@ const generateOptions = (data) => {
   };
 };
 
-const DashBoard = () => {
+const AdminStatistic = () => {
   const [customData, setCustomData] = useState();
   useEffect(() => {
     CustomerAndBillService.getAll().then((res) => setCustomData(res.data.data));
   }, []);
 
   return customData ? (
-    <Container style={{ padding: "50px 0" }}>
+    <div className="vh-100 text-center">
       <HighchartsReact
         highcharts={Hightcharts}
         options={generateOptions(customData)}
       />
-    </Container>
+    </div>
   ) : (
     <></>
   );
 };
 
-export default DashBoard;
+export default AdminStatistic;

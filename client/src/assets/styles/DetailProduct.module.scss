@@ -31,7 +31,7 @@
   }
   .review {
     color: #222222;
-    font-size: 13px;
+    font-size: 18px;
   }
   .new-price {
     color: var(--primary-color);
@@ -43,6 +43,9 @@
     color: #999999;
     text-decoration: line-through;
     font-weight: 600;
+  }
+  .description {
+    font-size: 16px;
   }
   .number-product {
     display: flex;
@@ -152,15 +155,10 @@
       border-bottom: none !important;
     }
   }
-
-  .review-form {
-  }
 }
 
 .related-product-wrapper {
   padding-top: 100px;
-  .slick-slider {
-  }
 }
 
 .thanh-toan-wrapper {
@@ -179,6 +177,7 @@
   font-weight: 700;
   color: white !important;
   padding: 5px 0;
+  text-align: center;
   &:hover {
     color: white !important;
   }

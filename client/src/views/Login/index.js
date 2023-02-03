@@ -55,7 +55,9 @@ const Login = () => {
       });
       setTimeout(() => {
         dispatch(loginAccount({ token, userName }));
-        navigate("/");
+        data.email === "admin@gmail.com"
+          ? navigate("/dashboard")
+          : navigate("/");
       }, 3000);
     } catch (error) {
       toast.error(`${error.response.data.message}`, {

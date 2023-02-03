@@ -9,10 +9,45 @@ import Register from "@/views/Register";
 import ShoppingCart from "@/views/ShoppingCart";
 import Search from "@/views/Search";
 import NotFound from "@/views/NotFound";
-import DefaultLayout from "@/Layout/DefaultLayout";
 import ListProductByCategory from "@/views/ListProductByCategory";
 import Checkout from "@/views/Checkout";
-import DashBoard from "@/views/DashBoard";
+import DefaultLayout from "@/Layout/DefaultLayout";
+
+// Private Route
+import AdminHome from "@/views/AdminHome";
+import AdminStatistic from "@/views/AdminStatistic";
+import AdminAddProduct from "@/views/AdminAddProduct";
+import AdminProducts from "@/views/AdminProducts";
+import AdminProductDetail from "@/views/AdminProductDetail";
+import NotDefaultLayout from "@/Layout/NotDefaultLayout";
+
+const privateRoutes = [
+  {
+    path: "/dashboard",
+    component: AdminHome,
+    layout: NotDefaultLayout,
+  },
+  {
+    path: "/dashboard/statistic",
+    component: AdminStatistic,
+    layout: NotDefaultLayout,
+  },
+  {
+    path: "/dashboard/add-product",
+    component: AdminAddProduct,
+    layout: NotDefaultLayout,
+  },
+  {
+    path: "/dashboard/products",
+    component: AdminProducts,
+    layout: NotDefaultLayout,
+  },
+  {
+    path: "/dashboard/products/detail/:name",
+    component: AdminProductDetail,
+    layout: NotDefaultLayout,
+  },
+];
 
 const publicRoutes = [
   {
@@ -61,12 +96,6 @@ const publicRoutes = [
     layout: DefaultLayout,
   },
   {
-    path: "/dashboard",
-    component: DashBoard,
-    layout: DefaultLayout,
-  },
-
-  {
     path: "/search/:search",
     component: Search,
     layout: DefaultLayout,
@@ -83,4 +112,4 @@ const publicRoutes = [
   },
 ];
 
-export { publicRoutes };
+export { publicRoutes, privateRoutes };

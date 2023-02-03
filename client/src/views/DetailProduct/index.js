@@ -46,7 +46,6 @@ const DetailProduct = () => {
   useEffect(() => {
     const fetchingData = async () => {
       const res = await ProductService.getByName(name);
-      console.log(res.data);
       setReviews(res.data.reviews);
       setCurrentProduct(res.data.products[0]);
     };
@@ -96,7 +95,9 @@ const DetailProduct = () => {
                         </span>
                       )}
                     </div>
-                    <div>{currentProduct.description}</div>
+                    <p className={cx("description")}>
+                      {currentProduct.description}
+                    </p>
                     <div className="d-flex w-75 align-items-center">
                       <div
                         className={cx("number-product")}
@@ -104,12 +105,12 @@ const DetailProduct = () => {
                       >
                         <input
                           className={cx("quantity-minus")}
-                          value="-"
+                          defaultValue="-"
                           onClick={() => handleRemoveItem(currentProduct)}
                         />
                         <input
                           className={cx("display-number")}
-                          value={
+                          defaultValue={
                             currentItem?.quantity >= 0
                               ? currentItem.quantity
                               : 0
@@ -117,7 +118,7 @@ const DetailProduct = () => {
                         />
                         <input
                           className={cx("quantity-plus")}
-                          value="+"
+                          defaultValue="+"
                           onClick={() => handleAddItem(currentProduct)}
                         />
                       </div>

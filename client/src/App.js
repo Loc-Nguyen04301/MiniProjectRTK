@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import DefaultLayout from "./Layout/DefaultLayout";
-import { publicRoutes } from "./routes";
+import { publicRoutes, privateRoutes } from "./routes";
 import ScrollGoToTop from "./features/ScrollGoToTop";
 import { useDispatch } from "react-redux";
 import { loginAccount } from "./redux/auth";
@@ -56,7 +56,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
-          {publicRoutes.map((route, index) => {
+          {publicRoutes.concat(privateRoutes).map((route, index) => {
             const Layout = route.layout || DefaultLayout;
             const View = route.component;
             return (

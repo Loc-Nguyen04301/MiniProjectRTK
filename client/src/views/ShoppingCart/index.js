@@ -15,8 +15,8 @@ const Shopping = () => {
 
   const dispatch = useDispatch();
 
-  const handleAddItem = (product,amount) => {
-    dispatch(addItem(product,amount));
+  const handleAddItem = (product, amount) => {
+    dispatch(addItem(product, amount));
   };
 
   const handleRemoveItem = (product) => {
@@ -50,7 +50,7 @@ const Shopping = () => {
         </NavItem>
       </Nav>
       <Row style={{ paddingBottom: "50px" }}>
-        <Col xs="7" style={{ borderRight: "1px solid #ececec" }}>
+        <Col xs="7" md="8" lg="8" style={{ borderRight: "1px solid #ececec" }}>
           <Table hover>
             <thead>
               <tr>
@@ -138,7 +138,7 @@ const Shopping = () => {
             </tbody>
           </Table>
         </Col>
-        <Col xs="5">
+        <Col xs="5" md="4" lg="4">
           <div style={{ padding: "0px 50px" }}>
             <h2>CỘNG GIỎ HÀNG</h2>
             <Table>

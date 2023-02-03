@@ -6,6 +6,7 @@ import classNames from "classnames/bind";
 import { imagesPosterSlider } from "@/assets/data/dataSlider";
 import ManufacturerSlider from "./components/ManufacturerSlider";
 import ProductCategory from "./components/ProductCategory";
+import productCategoryList from "@/assets/data/productCategoryList";
 
 let cx = classNames.bind(styles);
 
@@ -40,10 +41,9 @@ const Home = () => {
           />
         </Col>
       </Row>
-      <ProductCategory category={"SẢN PHẨM KHUYẾN MÃI"} />
-      <ProductCategory category={"PROTEIN TĂNG CÂN"} />
-      <ProductCategory category={"NĂNG LƯỢNG & SỨC KHỎE"} />
-      <ProductCategory category={"GIẢM MỠ & GIẢM CÂN"} />
+      {productCategoryList.map((item, index) => (
+        <ProductCategory category={item} key={index} />
+      ))}
       <Row className={cx("banner-container")}>
         <a href="/" className={cx("banner-image")}>
           <img

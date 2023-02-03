@@ -7,7 +7,7 @@ import classNames from "classnames/bind";
 import "@/assets/styles/GalleryProduct.scss";
 let cx = classNames.bind(styles);
 
-function Items({ currentProducts }) {
+const Items = ({ currentProducts }) => {
   return (
     <Row style={{ paddingTop: "40px" }}>
       {currentProducts &&
@@ -15,7 +15,7 @@ function Items({ currentProducts }) {
           <Col xs="4" key={product.id}>
             <div className={cx("box-product")}>
               <Link to={`/detail/${product.name}`}>
-                <img src={product.img} alt="" />
+                <img src={product.img} alt="detail-img" />
               </Link>
               <h3>
                 <Link
@@ -44,7 +44,7 @@ function Items({ currentProducts }) {
         ))}
     </Row>
   );
-}
+};
 
 const GalleryProduct = ({ searchProducts, itemsPerPage }) => {
   const [currentItems, setCurrentItems] = useState(null);
@@ -54,16 +54,12 @@ const GalleryProduct = ({ searchProducts, itemsPerPage }) => {
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(searchProducts.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(searchProducts.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, searchProducts]);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % searchProducts.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 

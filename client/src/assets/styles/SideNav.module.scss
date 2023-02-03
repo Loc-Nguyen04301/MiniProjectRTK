@@ -1,0 +1,23 @@
+.side-nav {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.sidenav-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 450px;
+}
+
+.group1 {
+  div:hover {
+    background-color: #eceff6;
+    border-radius: 13px;
+  }
+}

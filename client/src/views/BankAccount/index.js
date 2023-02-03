@@ -12,7 +12,7 @@ let cx = classNames.bind(styles);
 
 const BankAccount = () => {
   return (
-    <Container>
+    <Container className="mb-5">
       <div className={cx("breadcrumbs")}>
         <a href="/">
           <span className={cx("home")}>Trang chủ</span>

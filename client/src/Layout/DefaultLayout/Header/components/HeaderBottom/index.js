@@ -80,10 +80,6 @@ const HeaderBottom = () => {
     navigate(`/gio-hang`);
   };
 
-  const clickToDashBoard = () => {
-    navigate(`/dashboard`);
-  };
-
   return (
     <Fragment>
       <div className={cx("header-bottom")}>
@@ -204,22 +200,12 @@ const HeaderBottom = () => {
                     color="danger"
                     style={{
                       height: "40px",
-                      fontSize: "1.3rem",
-                      width: "60px",
+                      fontSize: "1.4rem",
+                      width: "80px",
                     }}
                     onClick={clickToCheckOut}
                   >
                     Đặt hàng
-                  </Button>
-                  <Button
-                    color="primary"
-                    style={{
-                      height: "40px",
-                      fontSize: "1.3rem",
-                    }}
-                    onClick={clickToDashBoard}
-                  >
-                    Thống kê
                   </Button>
                 </div>
               </div>

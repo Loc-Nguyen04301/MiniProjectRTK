@@ -73,7 +73,6 @@ const Search = () => {
             <h1 style={{ color: "var(--text-color)" }} className="ms-4">
               KẾT QUẢ TÌM KIẾM: '{searchByName}'
             </h1>
-
             <GalleryProduct searchProducts={searchProducts} itemsPerPage={6} />
           </Col>
         ) : (

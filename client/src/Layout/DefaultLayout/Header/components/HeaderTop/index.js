@@ -51,7 +51,7 @@ const HeaderTop = () => {
               Hello, {userName}
             </span>
             <span className={cx("log-out")} onClick={handleSignOut}>
-              <Link to={"/"}> Đăng xuất</Link>
+              <a href="/"> Đăng xuất</a>
             </span>
           </div>
         ) : (
