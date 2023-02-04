@@ -110,11 +110,12 @@ const DetailProduct = () => {
                         />
                         <input
                           className={cx("display-number")}
-                          defaultValue={
+                          value={
                             currentItem?.quantity >= 0
                               ? currentItem.quantity
                               : 0
                           }
+                          readOnly
                         />
                         <input
                           className={cx("quantity-plus")}
