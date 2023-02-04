@@ -21,8 +21,11 @@ app.use(compression());
 
 const initRoutes = require("./src/routes");
 const connectDatabase = require("./src/config/connectDatabase");
+const { errorHandler } = require("./src/middlewares/errorHandler");
 initRoutes(app);
 connectDatabase();
+// add Middleware ErrorHandler
+app.use(errorHandler);
 
 // set Port
 const port = process.env.PORT || 8080;

@@ -38,8 +38,7 @@ const Register = () => {
         data: data,
       };
       const response = await axios(config);
-      console.log(response);
-      toast.success("Register Successfully", {
+      toast.success(response.data.status, {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -53,8 +52,7 @@ const Register = () => {
         formRef.current.reset();
       }, 3000);
     } catch (error) {
-      console.log(error.response.data.message);
-      toast.error(`${error.response.data}`, {
+      toast.error(`${error.response.data.message}`, {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -105,7 +103,7 @@ const Register = () => {
             </form>
             <ToastContainer
               position="top-center"
-              autoClose={3000}
+              autoClose={2000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick

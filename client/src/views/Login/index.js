@@ -11,7 +11,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { loginAccount } from "@/redux/auth";
 import { useDispatch } from "react-redux";
-// import Oauth from "@/features/Oauth";
 
 let cx = classNames.bind(styles);
 
@@ -39,11 +38,9 @@ const Login = () => {
         data: data,
       };
       const response = await axios(config);
-      console.log(response);
       const { token, userName } = response.data;
       localStorage.setItem("token", token);
-
-      toast.success("Login Successfully", {
+      toast.success(response.data.status, {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -106,7 +103,7 @@ const Login = () => {
             </form>
             <ToastContainer
               position="top-center"
-              autoClose={3000}
+              autoClose={2000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick

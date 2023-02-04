@@ -9,14 +9,13 @@ exports.register = async (req, res, next) => {
   try {
     const checkUser = await User.findOne({ where: { email: req.body.email } });
     if (checkUser) {
-      //customize error message
+      // if email registered 
       const err = new Error("Email đã tồn tại");
       err.statusCode = 400;
       return next(err);
     }
     // hash password
     const hash = bcrypt.hashSync(req.body.password, saltRounds);
-    // create token
     const account = {
       name: req.body.name,
       email: req.body.email,
@@ -24,7 +23,7 @@ exports.register = async (req, res, next) => {
     };
     const user = await User.create(account);
     return res.status(200).json({
-      status: "success",
+      status: "Đăng kí thành công",
       user,
     });
   } catch (error) {
@@ -36,7 +35,7 @@ exports.login = async (req, res, next) => {
   try {
     const user = await User.findOne({ where: { email: req.body.email } });
     if (!user) {
-      const err = new Error("Email is not correct");
+      const err = new Error("Email không tồn tại");
       err.statusCode = 400;
       return next(err);
     }
@@ -44,12 +43,12 @@ exports.login = async (req, res, next) => {
     if (bcrypt.compareSync(req.body.password, user.password)) {
       const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
       return res.status(200).json({
-        status: "success",
+        status: "Đăng nhập thành công",
         token,
         userName: user.name,
       });
     } else {
-      const err = new Error("Password is not correct");
+      const err = new Error("Mật khẩu không đúng !!! Xin vui lòng thử lại ");
       err.statusCode = 400;
       return next(err);
     }
