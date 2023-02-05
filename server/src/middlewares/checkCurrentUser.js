@@ -5,7 +5,8 @@ exports.checkCurrentUser = (req, res, next) => {
 
   if (!Authorization) {
     req.user = null;
-    next(); // di vao function tiep theo
+    // next to getCurrentUser Controller
+    next();
   } else {
     const token = Authorization.replace("Bearer ", "");
 
@@ -13,10 +14,12 @@ exports.checkCurrentUser = (req, res, next) => {
     try {
       const { userId } = jwt.verify(token, process.env.APP_SECRET);
       req.user = { userId };
+      // next to getCurrentUser Controller
       next();
     } catch (err) {
       req.user = null;
-      next(); // truyen user.id vao getCurrentUser
+      // next to getCurrentUser Controller
+      next();
     }
   }
 };

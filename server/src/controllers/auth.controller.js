@@ -9,7 +9,7 @@ exports.register = async (req, res, next) => {
   try {
     const checkUser = await User.findOne({ where: { email: req.body.email } });
     if (checkUser) {
-      // if email registered 
+      // if email registered
       const err = new Error("Email đã tồn tại");
       err.statusCode = 400;
       return next(err);
@@ -46,6 +46,7 @@ exports.login = async (req, res, next) => {
         status: "Đăng nhập thành công",
         token,
         userName: user.name,
+        email: user.email,
       });
     } else {
       const err = new Error("Mật khẩu không đúng !!! Xin vui lòng thử lại ");
@@ -59,15 +60,15 @@ exports.login = async (req, res, next) => {
 
 exports.getCurrentUser = async (req, res, next) => {
   try {
-    let userName = "";
     if (req.user) {
       const user = await User.findOne({ where: { id: req.user.userId } });
-      userName = user.name;
+      if (user)
+        res.status(200).json({
+          status: "success",
+          userName: user.name,
+          email: user.email,
+        });
     }
-    res.status(200).json({
-      status: "success",
-      userName,
-    });
   } catch (error) {
     res.json(error);
   }

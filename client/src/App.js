@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { loginAccount } from "./redux/auth";
 import { retrieveProducts } from "@/redux/product";
 import axios from "axios";
+import ProtectedRoute from "./features/ProtectedRoute";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -39,9 +40,9 @@ const App = () => {
         },
       };
       const res = await axios(option);
-      if (res.data.userName) {
-        const userName = res.data.userName;
-        dispatch(loginAccount({ token, userName }));
+      if (res.data) {
+        const { userName, email } = res.data;
+        dispatch(loginAccount({ token, userName, email }));
       }
     } catch (error) {
       console.log(error);
@@ -56,7 +57,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Routes>
-          {publicRoutes.concat(privateRoutes).map((route, index) => {
+          {publicRoutes.map((route, index) => {
             const Layout = route.layout || DefaultLayout;
             const View = route.component;
             return (
@@ -66,6 +67,23 @@ const App = () => {
                 element={
                   <Layout>
                     <View />
+                  </Layout>
+                }
+              />
+            );
+          })}
+          {privateRoutes.map((route, index) => {
+            const Layout = route.layout || DefaultLayout;
+            const View = route.component;
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <ProtectedRoute redirectPath="/404">
+                      <View />
+                    </ProtectedRoute>
                   </Layout>
                 }
               />

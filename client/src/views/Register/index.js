@@ -9,6 +9,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 let cx = classNames.bind(styles);
 
 const schema = yup.object().shape({
@@ -101,18 +102,7 @@ const Register = () => {
                 <span className={cx("dang-nhap")}>Tạo tài khoản </span>
               </Button>
             </form>
-            <ToastContainer
-              position="top-center"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-            />
+            <ToastContainer />
           </div>
         </Col>
       </Row>

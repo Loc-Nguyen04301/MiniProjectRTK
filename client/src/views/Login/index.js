@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { loginAccount } from "@/redux/auth";
 import { useDispatch } from "react-redux";
+import adminAccount from "@/assets/data/AdminAccount";
 
 let cx = classNames.bind(styles);
 
@@ -38,8 +39,9 @@ const Login = () => {
         data: data,
       };
       const response = await axios(config);
-      const { token, userName } = response.data;
+      const { token, userName, email } = response.data;
       localStorage.setItem("token", token);
+      localStorage.setItem("email", email);
       toast.success(response.data.status, {
         position: "top-center",
         autoClose: 2000,
@@ -51,10 +53,8 @@ const Login = () => {
         theme: "light",
       });
       setTimeout(() => {
-        dispatch(loginAccount({ token, userName }));
-        data.email === "admin@gmail.com"
-          ? navigate("/dashboard")
-          : navigate("/");
+        dispatch(loginAccount({ token, userName, email }));
+        data.email === adminAccount ? navigate("/dashboard") : navigate("/");
       }, 3000);
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
@@ -101,23 +101,9 @@ const Login = () => {
                 </a>
               </div>
             </form>
-            <ToastContainer
-              position="top-center"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-            />
+            <ToastContainer />
           </div>
         </Col>
-        {/* <Col xs="6">
-          <Oauth />
-        </Col> */}
       </Row>
     </Container>
   );

@@ -24,19 +24,6 @@ const AdminProductDetail = () => {
     formState: { errors },
   } = useForm();
 
-  useEffect(() => {
-    const fetchingData = async () => {
-      const res = await ProductService.getByName(name);
-      console.log(res.data.products);
-      setCurrentProduct(res.data.products[0]);
-    };
-    fetchingData();
-  }, [name]);
-
-  useEffect(() => {
-    currentProduct && setImage(currentProduct.img);
-  }, [currentProduct]);
-
   const convertFileToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -73,8 +60,8 @@ const AdminProductDetail = () => {
         theme: "light",
       });
       setTimeout(() => {
-          navigate(`/dashboard/products/detail/${data.name}`);
-          navigate(0);
+        navigate(`/dashboard/products/detail/${data.name}`);
+        navigate(0);
       }, 4200);
     } catch (error) {
       toast.error(`${error}`, {
@@ -89,6 +76,19 @@ const AdminProductDetail = () => {
       });
     }
   };
+
+  useEffect(() => {
+    const fetchingData = async () => {
+      const res = await ProductService.getByName(name);
+      console.log(res.data.products);
+      setCurrentProduct(res.data.products[0]);
+    };
+    fetchingData();
+  }, [name]);
+
+  useEffect(() => {
+    currentProduct && setImage(currentProduct.img);
+  }, [currentProduct]);
 
   return (
     <>
@@ -206,18 +206,7 @@ const AdminProductDetail = () => {
               <input type="submit" value={"Update"} />
             </div>
           </form>
-          <ToastContainer
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
+          <ToastContainer />
         </div>
       ) : (
         <></>

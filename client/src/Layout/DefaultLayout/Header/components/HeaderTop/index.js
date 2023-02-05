@@ -18,6 +18,7 @@ const HeaderTop = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("email");
     localStorage.removeItem("persist:cart");
     dispatch(resetCart());
     dispatch(logoutAccount());
