@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { resetCart } from "@/redux/cart";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { exportToCSV } from "@/features/ExportDataToExcel";
 import CustomerAndBillService from "@/service/CustomerAndBillService";
 
 const schema = yup.object().shape({
@@ -15,9 +14,6 @@ const schema = yup.object().shape({
   email: yup.string().email().required(),
   phoneNumber: yup.string().required(),
 });
-
-// Excel File Name Export data
-const fileCustomName = "thongtinkhachhang";
 
 const DataBill = () => {
   var cartItems = useSelector((state) => state.cart.cartItems);
@@ -41,18 +37,6 @@ const DataBill = () => {
     if (totalAmount) {
       //create and save bill in DB
       CustomerAndBillService.create({ ...data, cartItems });
-      //export data to EXCEL
-      exportToCSV(
-        [
-          {
-            Tên: data.name,
-            Email: data.email,
-            "Số điện thoại": data.phoneNumber,
-            "Ngày mua hàng": new Date(),
-          },
-        ],
-        fileCustomName
-      );
       localStorage.removeItem("persist:cart");
       dispatch(resetCart());
       navigate(0);

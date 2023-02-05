@@ -1,13 +1,6 @@
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
 
-// // Option 3: Passing parameters separately (other dialects)
-// const sequelize = new Sequelize("thol", "root", "", {
-//   host: "localhost",
-//   dialect: "mysql",
-//   logging: false,
-// });
-
 // Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize(
   process.env.DB_DATABASE_NAME,

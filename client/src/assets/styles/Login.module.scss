@@ -12,13 +12,9 @@
   background-color: #fafafa;
   min-height: 320px;
   border: 1px solid #ddd;
-  .form-container {
-    width: min-content;
-  }
   .label-name,
   .label-email,
   .label-password {
-    width: 500px;
     text-align: left !important;
     font-weight: 500 !important;
   }
@@ -31,7 +27,8 @@
     margin: 0 0 0 5px;
   }
   input {
-    width: 500px;
+    display: block;
+    width: 100%;
     height: 35px;
     border: 1px solid #adadad;
     background-color: #fff;

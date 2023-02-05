@@ -1,3 +1,13 @@
+@media (max-width: 767.98px) {
+  .poster-slider-container {
+    display: none !important;
+  }
+}
+
+.poster-slider-container {
+  padding-top: 40px;
+}
+
 h2[class="from-blog"] {
   font-size: 138.5%;
   color: rgb(34, 34, 34);

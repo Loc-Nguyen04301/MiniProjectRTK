@@ -70,7 +70,7 @@ const Register = () => {
     <Container>
       <div className={cx("login-container")}>TẠO MỚI TÀI KHOẢN KHÁCH HÀNG</div>
       <Row>
-        <Col xs="12">
+        <Col lg="6" md="9">
           <div className={cx("block-customer-login")}>
             <p>Khách hàng đã đăng ký</p>
             <p>

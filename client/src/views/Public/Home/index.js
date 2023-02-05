@@ -13,10 +13,10 @@ let cx = classNames.bind(styles);
 const Home = () => {
   return (
     <Container>
-      <Row style={{ paddingTop: "40px" }}>
+      <Row className={cx("poster-slider-container")}>
         <Col xs="12" style={{ display: "flex", justifyContent: "center" }}>
           <SimpleImageSlider
-            width={"800px"}
+            width={"720px"}
             height={"510px"}
             images={imagesPosterSlider}
             showBullets={true}
@@ -26,14 +26,14 @@ const Home = () => {
         </Col>
       </Row>
       <Row className={cx("poster-main")}>
-        <Col xs="6">
+        <Col lg="6" md="12" xs="12">
           <img
             src="https://www.thol.com.vn/wp-content/uploads/2023/01/Vitadapt-1-hang-da-ve-1024x576.jpg"
             alt="VITAMIN KHOÁNG CHẤT SỐNG KHOẺ TẬP KHOẺ - Hàng ngon đã về, order ngay kẻo lỡ"
             style={{ padding: "0 15px" }}
           />
         </Col>
-        <Col xs="6">
+        <Col lg="6" md="12" xs="12">
           <img
             src="https://www.thol.com.vn/wp-content/uploads/2023/01/2021-06-18_titanium_GA_pancake-1024x576.jpg"
             alt="Titanium Isolate tặng Pancake"

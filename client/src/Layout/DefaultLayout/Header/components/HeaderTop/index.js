@@ -8,6 +8,7 @@ import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { resetCart } from "@/redux/cart";
 import { logoutAccount } from "@/redux/auth";
 import { Container } from "reactstrap";
+import { adminName } from "@/assets/data/AdminAccount";
 
 let cx = classNames.bind(styles);
 
@@ -45,14 +46,27 @@ const HeaderTop = () => {
             )}
           </p>
         </div>
-        {userName ? (
+        {userName && userName !== adminName ? (
           <div className={cx("right")}>
             <span>
               <FontAwesomeIcon className="px-2" icon={faUser} size={"lg"} />
               Hello, {userName}
             </span>
             <span className={cx("log-out")} onClick={handleSignOut}>
-              <a href="/"> Đăng xuất</a>
+              <a href="/">Đăng xuất</a>
+            </span>
+          </div>
+        ) : userName === adminName ? (
+          <div className={cx("right")}>
+            <span>
+              <FontAwesomeIcon className="px-2" icon={faUser} size={"lg"} />
+              Hello, {userName}
+            </span>
+            <span className={cx("log-out")} onClick={handleSignOut}>
+              <a href="/">Đăng xuất</a>
+            </span>
+            <span className={cx("log-out")}>
+              <a href="/dashboard">Trang quản trị </a>
             </span>
           </div>
         ) : (

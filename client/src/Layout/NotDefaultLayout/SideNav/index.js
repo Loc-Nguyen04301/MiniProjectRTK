@@ -8,6 +8,7 @@ import {
   faCircleInfo,
   faList,
   faPlus,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import SideNavItems from "./SideNavItems";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +22,10 @@ const SideNav = () => {
     pathName.length !== 0
       ? navigate(`/dashboard/${pathName}`)
       : navigate(`/dashboard`);
+  };
+
+  const handleExitAdminPage = () => {
+    navigate("/");
   };
 
   return (
@@ -54,6 +59,13 @@ const SideNav = () => {
           />
           <SideNavItems icon={faGears} title={"Settings"} />
           <SideNavItems icon={faCircleInfo} title={"Help Center"} />
+        </div>
+        <div
+          style={{ width: "150px" }}
+          className={cx("group1")}
+          onClick={handleExitAdminPage}
+        >
+          <SideNavItems icon={faArrowLeft} title={"Exit"} />
         </div>
       </div>
     </aside>

@@ -1,7 +1,5 @@
 const db = require("../models");
 const Product = db.Product;
-const Review = db.Review;
-const User = db.User;
 const { Op } = require("sequelize");
 const { QueryTypes } = require("sequelize");
 const { sequelize } = require("../models");

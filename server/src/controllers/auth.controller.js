@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 const saltRounds = 10;
-
 const db = require("../models");
 const User = db.User;
 

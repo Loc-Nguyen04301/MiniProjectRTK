@@ -1,13 +1,5 @@
 @media (max-width: 991.98px) {
   .header {
-    .header-top {
-      .left {
-        display: none;
-      }
-      .right {
-        justify-content: center;
-      }
-    }
     .header-middle {
       .menu-list {
         display: none;
@@ -19,14 +11,11 @@
       }
       .navbar-search {
         width: 100%;
-        display: block;
+        display: flex;
         .search-box {
           width: 100%;
         }
       }
-    }
-    .wishlist-cart {
-      display: none;
     }
   }
 }

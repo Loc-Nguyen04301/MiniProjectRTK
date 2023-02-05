@@ -3,11 +3,11 @@
 import http from "@/service/http-common";
 
 const create = (data) => {
-  return http.post("/customer", data);
+  return http.post("/customerAndBill", data);
 };
 
 const getAll = () => {
-  return http.get("/customer");
+  return http.get("/customerAndBill");
 };
 
 const CustomerAndBillService = {

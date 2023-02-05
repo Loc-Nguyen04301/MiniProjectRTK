@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import ShoppingCart from "./../../components/ShoppingCart";
+import ShoppingCart from "./components/ShoppingCart";
 import ProductService from "@/service/ProductService";
 
 import styles from "@/assets/styles/Header.module.scss";

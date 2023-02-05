@@ -1,24 +1,24 @@
 // Public Routes
-import Home from "@/views/Home";
-import Contact from "@/views/Contact";
-import AboutUs from "@/views/AboutUs";
-import BankAccount from "@/views/BankAccount";
-import DetailProduct from "@/views/DetailProduct";
-import Login from "@/views/Login";
-import Register from "@/views/Register";
-import ShoppingCart from "@/views/ShoppingCart";
-import Search from "@/views/Search";
-import NotFound from "@/views/NotFound";
-import ListProductByCategory from "@/views/ListProductByCategory";
-import Checkout from "@/views/Checkout";
+import Home from "@/views/Public/Home";
+import Contact from "@/views/Public/Contact";
+import AboutUs from "@/views/Public/AboutUs";
+import BankAccount from "@/views/Public/BankAccount";
+import DetailProduct from "@/views/Public/DetailProduct";
+import Login from "@/views/Public/Login";
+import Register from "@/views/Public/Register";
+import ShoppingCart from "@/views/Public/ShoppingCart";
+import Search from "@/views/Public/Search";
+import NotFound from "@/views/Public/NotFound";
+import ListProductByCategory from "@/views/Public/ListProductByCategory";
+import Checkout from "@/views/Public/Checkout";
 import DefaultLayout from "@/Layout/DefaultLayout";
 
 // Private Route
-import AdminHome from "@/views/AdminHome";
-import AdminStatistic from "@/views/AdminStatistic";
-import AdminAddProduct from "@/views/AdminAddProduct";
-import AdminProducts from "@/views/AdminProducts";
-import AdminProductDetail from "@/views/AdminProductDetail";
+import AdminHome from "@/views/Private/AdminHome";
+import AdminStatistic from "@/views/Private/AdminStatistic";
+import AdminAddProduct from "@/views/Private/AdminAddProduct";
+import AdminProducts from "@/views/Private/AdminProducts";
+import AdminProductDetail from "@/views/Private/AdminProductDetail";
 import NotDefaultLayout from "@/Layout/NotDefaultLayout";
 
 const privateRoutes = [

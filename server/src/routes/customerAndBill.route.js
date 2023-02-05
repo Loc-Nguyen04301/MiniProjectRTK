@@ -1,5 +1,5 @@
 //Define Routes
-const { create, getAllBills } = require("../controllers/customer.controller");
+const { create, getAllBills } = require("../controllers/customerAndBill.controller");
 
 const express = require("express");
 const router = express.Router();

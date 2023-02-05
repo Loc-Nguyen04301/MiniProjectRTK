@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "react-hook-form";
 import productCategoryList from "@/assets/data/productCategoryList";
-
 import classNames from "classnames/bind";
 import styles from "./../AdminAddProduct/AdminAddProduct.module.scss";
 

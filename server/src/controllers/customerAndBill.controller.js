@@ -1,11 +1,10 @@
 const db = require("../models");
 const Customer = db.Customer;
 const Bill = db.Bill;
-const { Op } = require("sequelize");
-const { QueryTypes } = require("sequelize");
 const { sequelize } = require("../models");
 
 exports.create = async (req, res, next) => {
+  // create Customer
   const { name, email, phoneNumber } = req.body;
   await Customer.create({ name, email, phoneNumber })
     .then((data) => {
@@ -16,11 +15,11 @@ exports.create = async (req, res, next) => {
         });
     })
     .catch((error) => next(error));
+  // create Bill
   const { cartItems } = req.body;
   cartItems.map(async (item) => {
     const { name, img, quantity, totalPrice } = item;
     await Bill.create({
-      customer_name: req.body.name,
       productName: name,
       img,
       quantity,

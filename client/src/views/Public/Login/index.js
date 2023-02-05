@@ -11,7 +11,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { loginAccount } from "@/redux/auth";
 import { useDispatch } from "react-redux";
-import adminAccount from "@/assets/data/AdminAccount";
 
 let cx = classNames.bind(styles);
 
@@ -54,7 +53,7 @@ const Login = () => {
       });
       setTimeout(() => {
         dispatch(loginAccount({ token, userName, email }));
-        data.email === adminAccount ? navigate("/dashboard") : navigate("/");
+        navigate("/");
       }, 3000);
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
@@ -74,7 +73,7 @@ const Login = () => {
     <Container>
       <div className={cx("login-container")}>KHÁCH HÀNG ĐĂNG NHẬP</div>
       <Row>
-        <Col xs="6">
+        <Col lg="6" md="9">
           <div className={cx("block-customer-login")}>
             <p>Khách hàng đã đăng ký</p>
             <p>
@@ -85,13 +84,16 @@ const Login = () => {
               onSubmit={handleSubmit(onSubmit)}
               className={cx("form-container")}
             >
-              <div className={cx("label-email")}>Email</div>
-              <input {...register("email")} type={"text"} />
-              <p>{errors.email?.message}</p>
-
-              <div className={cx("label-password")}>Mật khẩu</div>
-              <input {...register("password")} type={"password"} />
-              <p>{errors.password?.message}</p>
+              <div>
+                <div className={cx("label-email")}>Email</div>
+                <input {...register("email")} type={"text"} />
+                <p>{errors.email?.message}</p>
+              </div>
+              <div>
+                <div className={cx("label-password")}>Mật khẩu</div>
+                <input {...register("password")} type={"password"} />
+                <p>{errors.password?.message}</p>
+              </div>
               <div className="d-flex justify-content-between">
                 <Button type="submit" className={cx("button-submit")}>
                   <span className={cx("dang-nhap")}>Đăng nhập</span>

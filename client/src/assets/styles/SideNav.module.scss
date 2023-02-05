@@ -4,7 +4,6 @@
   top: 0;
   background-color: #fff;
   height: 100vh;
-  padding-top: 20px;
 }
 
 .sidenav-items {
@@ -12,7 +11,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 450px;
+  height: inherit;
+  padding: 30px 0;
 }
 
 .group1 {

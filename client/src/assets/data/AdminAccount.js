@@ -1,2 +1,3 @@
-const adminAccount = "admin@gmail.com";
-export default adminAccount;
+const adminEmail = "admin@gmail.com";
+const adminName = "ADMIN";
+export { adminEmail, adminName };

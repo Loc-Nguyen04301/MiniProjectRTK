@@ -44,7 +44,7 @@ const AdminAddProduct = () => {
         setImage();
       }, 3000);
     } catch (error) {
-      toast.error(`${error}`, {
+      toast.error(`${error.response.data.message}`, {
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -150,7 +150,7 @@ const AdminAddProduct = () => {
         <div className="form-group">
           <label htmlFor="category">Upload Product Image</label>
           <input type="file" name="img" onChange={handleChangeImage} />
-          {image && <p>Please Upload Image</p>}
+          {!image && <p>Please Upload Image</p>}
         </div>
         {image && (
           <div

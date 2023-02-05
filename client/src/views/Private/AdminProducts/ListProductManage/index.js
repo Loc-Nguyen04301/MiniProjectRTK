@@ -32,7 +32,7 @@ const Items = ({ currentItems }) => {
         currentItems.map((product) => (
           <Col xs="12" lg="4" md="4" key={product.id}>
             <a
-              href
+              href="true"
               style={{ fontSize: "30px", float: "right" }}
               onClick={toggleModalDelete}
             >
