@@ -35,6 +35,7 @@ const WishListCart = () => {
       setOpenModal((prev) => !prev);
     }, 200);
   };
+  console.log(cartItems);
 
   return (
     <Container>

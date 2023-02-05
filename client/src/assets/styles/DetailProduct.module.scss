@@ -75,10 +75,12 @@
     margin: 0 20px;
     border-radius: 16px;
     .add-product-text {
-      font-size: 150%;
-      margin: 4px;
+      margin: 0;
+      font-size: 170%;
+      font-weight: 450;
       text-transform: capitalize;
       letter-spacing: 0.5px;
+      text-align: center;
     }
     border: none;
   }

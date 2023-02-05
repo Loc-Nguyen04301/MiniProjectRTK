@@ -124,9 +124,9 @@ const DetailProduct = () => {
                         />
                       </div>
                       <Button type="submit" className={cx("add-product")}>
-                        <span className={cx("add-product-text")}>
+                        <p className={cx("add-product-text")}>
                           Thêm vào giỏ hàng
-                        </span>
+                        </p>
                       </Button>
                     </div>
                     <div className="my-3">

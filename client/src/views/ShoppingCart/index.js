@@ -15,8 +15,8 @@ const Shopping = () => {
 
   const dispatch = useDispatch();
 
-  const handleAddItem = (product, amount) => {
-    dispatch(addItem(product, amount));
+  const handleAddItem = (product) => {
+    dispatch(addItem(product));
   };
 
   const handleRemoveItem = (product) => {
@@ -62,79 +62,80 @@ const Shopping = () => {
               </tr>
             </thead>
             <tbody>
-              {cartItems.map((item, index) => (
-                <tr key={index}>
-                  <th scope="row" style={{ position: "relative" }}>
-                    <p
-                      style={{
-                        position: "absolute",
-                        margin: "0",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                      }}
-                    >
-                      {index + 1}
-                    </p>
-                  </th>
-                  <td style={{ display: "flex", alignItems: "center" }}>
-                    <img src={item.img} alt="item" width={"80px"} />
-                    <span>{item.name}</span>
-                  </td>
-                  <td style={{ position: "relative" }}>
-                    <p
-                      style={{
-                        position: "absolute",
-                        margin: "0",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                      }}
-                    >
-                      {item.new_price.toLocaleString("vi")}₫
-                    </p>
-                  </td>
-                  <td style={{ position: "relative" }} width="90px">
-                    <div
-                      className={cx("info-detail-container")}
-                      style={{
-                        position: "absolute",
-                        margin: "0",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                      }}
-                    >
-                      <span className={cx("number-product")}>
-                        <div
-                          className={cx("quantity-minus")}
-                          onClick={() => handleRemoveItem(item)}
-                        >
-                          <div>-</div>
-                        </div>
-                        <span className={cx("display-number")}>
-                          {item?.quantity >= 0 ? item.quantity : 0}
+              {cartItems &&
+                cartItems.map((item, index) => (
+                  <tr key={index}>
+                    <th scope="row" style={{ position: "relative" }}>
+                      <p
+                        style={{
+                          position: "absolute",
+                          margin: "0",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                        }}
+                      >
+                        {index + 1}
+                      </p>
+                    </th>
+                    <td style={{ display: "flex", alignItems: "center" }}>
+                      <img src={item.img} alt="item" width={"80px"} />
+                      <span>{item.name}</span>
+                    </td>
+                    <td style={{ position: "relative" }}>
+                      <p
+                        style={{
+                          position: "absolute",
+                          margin: "0",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                        }}
+                      >
+                        {item.new_price.toLocaleString("vi")}₫
+                      </p>
+                    </td>
+                    <td style={{ position: "relative" }} width="90px">
+                      <div
+                        className={cx("info-detail-container")}
+                        style={{
+                          position: "absolute",
+                          margin: "0",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                        }}
+                      >
+                        <span className={cx("number-product")}>
+                          <div
+                            className={cx("quantity-minus")}
+                            onClick={() => handleRemoveItem(item)}
+                          >
+                            <div>-</div>
+                          </div>
+                          <span className={cx("display-number")}>
+                            {item?.quantity >= 0 ? item.quantity : 0}
+                          </span>
+                          <div
+                            className={cx("quantity-plus")}
+                            onClick={() => handleAddItem(item)}
+                          >
+                            <div>+</div>
+                          </div>
                         </span>
-                        <div
-                          className={cx("quantity-plus")}
-                          onClick={() => handleAddItem(item, 1)}
-                        >
-                          <div>+</div>
-                        </div>
-                      </span>
-                    </div>
-                  </td>
-                  <td style={{ position: "relative" }}>
-                    <p
-                      style={{
-                        position: "absolute",
-                        margin: "0",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                      }}
-                    >
-                      {item.totalPrice.toLocaleString("vi")}₫
-                    </p>
-                  </td>
-                </tr>
-              ))}
+                      </div>
+                    </td>
+                    <td style={{ position: "relative" }}>
+                      <p
+                        style={{
+                          position: "absolute",
+                          margin: "0",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                        }}
+                      >
+                        {item.totalPrice.toLocaleString("vi")}₫
+                      </p>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
         </Col>
