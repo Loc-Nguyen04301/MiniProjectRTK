@@ -46,6 +46,7 @@ exports.login = async (req, res, next) => {
         token,
         userName: user.name,
         email: user.email,
+        userId: user.id,
       });
     } else {
       const err = new Error("Mật khẩu không đúng !!! Xin vui lòng thử lại ");
@@ -66,6 +67,7 @@ exports.getCurrentUser = async (req, res, next) => {
           status: "success",
           userName: user.name,
           email: user.email,
+          userId: req.user.userId,
         });
     }
   } catch (error) {

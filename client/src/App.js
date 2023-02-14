@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import DefaultLayout from "./Layout/DefaultLayout";
 import { publicRoutes, privateRoutes } from "./routes";
-import ScrollGoToTop from "./features/ScrollGoToTop";
+import ScrollGoToTop from "./components/ScrollGoToTop";
 import { useDispatch } from "react-redux";
 import { loginAccount } from "./redux/auth";
 import { retrieveProducts } from "@/redux/product";
@@ -41,8 +41,8 @@ const App = () => {
       };
       const res = await axios(option);
       if (res.data) {
-        const { userName, email } = res.data;
-        dispatch(loginAccount({ token, userName, email }));
+        const { userName, email, userId } = res.data;
+        dispatch(loginAccount({ token, userName, email, userId }));
       }
     } catch (error) {
       console.log(error);

@@ -200,8 +200,9 @@ const HeaderBottom = () => {
                     color="danger"
                     style={{
                       height: "40px",
-                      fontSize: "1.4rem",
+                      fontSize: "1.6rem",
                       width: "80px",
+                      fontWeight: "600",
                     }}
                     onClick={clickToCheckOut}
                   >

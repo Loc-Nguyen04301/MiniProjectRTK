@@ -37,11 +37,11 @@ const Login = () => {
         url: `${process.env.REACT_APP_SERVER_URL}/api/v1/auth/login`,
         data: data,
       };
-      const response = await axios(config);
-      const { token, userName, email } = response.data;
+      const res = await axios(config);
+      const { token, userName, email, userId } = res.data;
       localStorage.setItem("token", token);
-      localStorage.setItem("email", email);
-      toast.success(response.data.status, {
+      // localStorage.setItem("email", email);
+      toast.success(res.data.status, {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -52,7 +52,7 @@ const Login = () => {
         theme: "light",
       });
       setTimeout(() => {
-        dispatch(loginAccount({ token, userName, email }));
+        dispatch(loginAccount({ token, userName, email, userId }));
         navigate("/");
       }, 3000);
     } catch (error) {

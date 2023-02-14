@@ -34,6 +34,7 @@ const ScrollGoToTop = () => {
         width: "60px",
         height: "60px",
         borderRadius: "50%",
+        transform: "translateY(0)",
         display: visible ? "inline" : "none",
       }}
     >

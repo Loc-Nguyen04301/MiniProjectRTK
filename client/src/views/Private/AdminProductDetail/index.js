@@ -79,7 +79,6 @@ const AdminProductDetail = () => {
   useEffect(() => {
     const fetchingData = async () => {
       const res = await ProductService.getByName(name);
-      console.log(res.data.products);
       setCurrentProduct(res.data.products[0]);
     };
     fetchingData();

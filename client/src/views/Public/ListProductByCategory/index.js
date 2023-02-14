@@ -35,45 +35,46 @@ const ListProductByCategory = () => {
         <span className={cx("about-me")}>{category}</span>
       </div>
       <Row>
-        {products?.map((product) => (
-          <Col xs="3" key={product.id}>
-            <div className={cx("box-product")}>
-              <Link to={`/detail/${product.name}`}>
-                <img src={product.img} alt="" />
-              </Link>
-              <div className={cx("show-on-hover")}>
-                <Link
-                  to={`/detail/${product.name}`}
-                  className={cx("text-show-one-hover")}
-                >
-                  Quick view
+        {products &&
+          products.map((product) => (
+            <Col xs="3" key={product.id}>
+              <div className={cx("box-product")}>
+                <Link to={`/detail/${product.name}`}>
+                  <img src={product.img} alt="" />
                 </Link>
-              </div>
-              <h3>
-                <Link
-                  to={`/detail/${product.name}`}
-                  className="text-center mt-3"
-                >
-                  {product.name}
-                </Link>
-              </h3>
-              <div className="d-flex justify-content-center mt-5">
-                <span className="price-container">
-                  <span className={cx("price-wrapper")}>
-                    <span className={cx("new-price")}>
-                      {product.new_price.toLocaleString("vi")}₫
-                    </span>
-                    {product.old_price !== 0 && (
-                      <span className={cx("old-price")}>
-                        {product.old_price.toLocaleString("vi")}₫
+                <div className={cx("show-on-hover")}>
+                  <Link
+                    to={`/detail/${product.name}`}
+                    className={cx("text-show-one-hover")}
+                  >
+                    Quick view
+                  </Link>
+                </div>
+                <h3>
+                  <Link
+                    to={`/detail/${product.name}`}
+                    className="text-center mt-3"
+                  >
+                    {product.name}
+                  </Link>
+                </h3>
+                <div className="d-flex justify-content-center mt-5">
+                  <span className="price-container">
+                    <span className={cx("price-wrapper")}>
+                      <span className={cx("new-price")}>
+                        {product.new_price.toLocaleString("vi")}₫
                       </span>
-                    )}
+                      {product.old_price !== 0 && (
+                        <span className={cx("old-price")}>
+                          {product.old_price.toLocaleString("vi")}₫
+                        </span>
+                      )}
+                    </span>
                   </span>
-                </span>
+                </div>
               </div>
-            </div>
-          </Col>
-        ))}
+            </Col>
+          ))}
       </Row>
     </Container>
   );

@@ -16,7 +16,7 @@ const ModalChat = ({ setOpenModal }) => {
       <div className="m-5 d-flex justify-content-between">
         <img
           className={cx("_a3jx img")}
-          src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-1/305583313_622150602713098_6729240055116173157_n.jpg?stp=cp0_dst-jpg_p80x80&_nc_cat=108&ccb=1-7&_nc_sid=05dcb7&_nc_ohc=prW5eD0aeOIAX9SoMKP&tn=6NUB1o3xO_ypxuTb&_nc_ht=scontent.fhan14-2.fna&oh=00_AfBfgZUimYUzBL7qzKqNnyDGJy7Q-2hYSnVxeJ9hgL3daA&oe=63A44741"
+          src="https://annguyensupp.vn/wp-content/uploads/2021/06/9106021_1798134910323287_3876643000402575360_n.jpg"
           alt=""
           width={"48px"}
           height={"48px"}

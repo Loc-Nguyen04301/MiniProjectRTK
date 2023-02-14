@@ -39,28 +39,31 @@ const RelatedProducts = ({ currentProduct }) => {
     <div className={cx("related-product-wrapper")}>
       <h3>SẢN PHẨM TƯƠNG TỰ</h3>
       <Slider {...settings}>
-        {relatedProducts?.map((item) => (
-          <div key={item.id}>
-            <div>
-              <img src={item.img} alt="abc" />
-              <h2 style={{ color: "#222", fontWeight: "400" }}>{item.name}</h2>
-              <span
-                style={{
-                  color: "#222",
-                  fontWeight: "500",
-                  textDecoration: "line-through",
-                }}
-              >
-                {item.old_price !== 0
-                  ? item.old_price.toLocaleString("vi") + "₫"
-                  : ""}
-              </span>{" "}
-              <span style={{ color: "#222", fontWeight: "500" }}>
-                {item.new_price.toLocaleString("vi") + "₫"}
-              </span>
+        {relatedProducts &&
+          relatedProducts.map((item) => (
+            <div key={item.id}>
+              <div>
+                <img src={item.img} alt="abc" />
+                <h2 style={{ color: "#222", fontWeight: "400" }}>
+                  {item.name}
+                </h2>
+                <span
+                  style={{
+                    color: "#222",
+                    fontWeight: "500",
+                    textDecoration: "line-through",
+                  }}
+                >
+                  {item.old_price !== 0
+                    ? item.old_price.toLocaleString("vi") + "₫"
+                    : ""}
+                </span>{" "}
+                <span style={{ color: "#222", fontWeight: "500" }}>
+                  {item.new_price.toLocaleString("vi") + "₫"}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Slider>
     </div>
   );
