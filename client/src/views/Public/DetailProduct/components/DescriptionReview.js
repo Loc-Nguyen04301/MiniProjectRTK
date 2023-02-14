@@ -11,7 +11,7 @@ import ReviewService from "@/service/ReviewService";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 let cx = classNames.bind(styles);
 

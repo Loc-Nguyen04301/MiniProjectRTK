@@ -8,6 +8,7 @@
 }
 
 .box-product {
+  border: 1px solid #e8e8e8;
   margin: 10px;
   .show-on-hover {
     height: 30px;
@@ -28,10 +29,9 @@
       color: #fff !important;
     }
   }
-}
-
-.box-product:hover > .show-on-hover {
-  opacity: 1;
+  &:hover > .show-on-hover {
+    opacity: 1;
+  }
 }
 
 div a img {

@@ -26,7 +26,7 @@ const ListProductByCategory = () => {
   }, [category]);
 
   return (
-    <Container>
+    <Container style={{ margin: "50px auto" }} >
       <div className={cx("breadcrumbs")}>
         <a href="/">
           <span className={cx("home")}>Trang chủ</span>

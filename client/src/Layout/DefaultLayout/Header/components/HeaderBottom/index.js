@@ -16,11 +16,13 @@ import {
   faRetweet,
   faShoppingCart,
   faMagnifyingGlass,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import ShoppingCart from "./components/ShoppingCart";
 import ProductService from "@/service/ProductService";
+import productCategoryList from "@/assets/data/productCategoryList";
 
 import styles from "@/assets/styles/Header.module.scss";
 import classNames from "classnames/bind";
@@ -83,67 +85,48 @@ const HeaderBottom = () => {
   return (
     <Fragment>
       <div className={cx("header-bottom")}>
-        <Container>
+        <Container fluid>
           <Row>
-            <Col lg="3" md="3" sm="4" className={cx("sidebar-menu")}>
+            <Col
+              xl="3"
+              lg="3"
+              md="3"
+              sm="4"
+              xs="0"
+              className={cx("sidebar-menu")}
+            >
               <div className={cx("menu-content-sidebar")}>
                 <UncontrolledDropdown direction="down">
-                  <DropdownToggle
-                    caret
-                    color="dark"
-                    className={cx("dropdown-btn")}
-                  >
+                  <DropdownToggle color="dark" className={cx("dropdown-btn")}>
                     <FontAwesomeIcon icon={faList} size={"2x"} />
                     <span className={cx("text-dropdown")}>
                       Danh mục sản phẩm
                     </span>
+                    <FontAwesomeIcon icon={faAngleDown} size="2x" />
                   </DropdownToggle>
-                  <DropdownMenu>
-                    <li
-                      className={cx("list-item")}
-                      onClick={() => {
-                        handleNavigateCategory("Protein Tăng cân");
-                      }}
-                    >
-                      Protein Tăng cân
-                    </li>
-                    <li
-                      className={cx("list-item")}
-                      onClick={() => {
-                        handleNavigateCategory("Năng lượng & Sức khỏe");
-                      }}
-                    >
-                      Năng lượng & Sức khỏe
-                    </li>
-                    <li
-                      className={cx("list-item")}
-                      onClick={() => {
-                        handleNavigateCategory("Giảm mỡ & Giảm cân");
-                      }}
-                    >
-                      Giảm mỡ & Giảm cân
-                    </li>
-                    <li
-                      className={cx("list-item")}
-                      onClick={() => {
-                        handleNavigateCategory("Theo hãng sản xuất");
-                      }}
-                    >
-                      Theo hãng sản xuất
-                    </li>
-                    <li
-                      className={cx("list-item")}
-                      onClick={() => {
-                        handleNavigateCategory("Phụ kiện Gym");
-                      }}
-                    >
-                      Phụ kiện Gym
-                    </li>
+                  <DropdownMenu className={cx("dropdown-menu")}>
+                    {productCategoryList.map((item) => (
+                      <li
+                        className={cx("list-item")}
+                        onClick={() => {
+                          handleNavigateCategory(item);
+                        }}
+                      >
+                        {item}
+                      </li>
+                    ))}
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </div>
             </Col>
-            <Col lg="9" md="9" sm="8" xs="12" className={cx("navbar-search")}>
+            <Col
+              xl="9"
+              lg="9"
+              md="9"
+              sm="8"
+              xs="12"
+              className={cx("navbar-search")}
+            >
               <div className={cx("search-box")}>
                 <div className="input-group py-2">
                   <input
@@ -214,7 +197,7 @@ const HeaderBottom = () => {
           </Row>
         </Container>
       </div>
-      {searchProducts?.length > 0 ? (
+      {searchProducts && searchProducts.length > 0 && (
         <div className={cx("list-product-wrapper")}>
           <ul className={cx("list-product")}>
             {searchProducts.map((item) => (
@@ -234,8 +217,6 @@ const HeaderBottom = () => {
             ))}
           </ul>
         </div>
-      ) : (
-        <></>
       )}
     </Fragment>
   );

@@ -36,11 +36,11 @@ const HeaderTop = () => {
             ) : (
               <>
                 <Link to="/dang-ky" className={cx("login-text")}>
-                  {} Đăng kí {}
+                  Đăng kí
                 </Link>
                 hoặc
                 <Link to="/dang-nhap" className={cx("login-text")}>
-                  {} Đăng nhập{}
+                  Đăng nhập
                 </Link>
               </>
             )}
@@ -48,7 +48,7 @@ const HeaderTop = () => {
         </div>
         {userName && userName !== adminName ? (
           <div className={cx("right")}>
-            <span>
+            <span className={cx("hello")}>
               <FontAwesomeIcon className="px-2" icon={faUser} size={"lg"} />
               Hello, {userName}
             </span>
@@ -58,7 +58,7 @@ const HeaderTop = () => {
           </div>
         ) : userName === adminName ? (
           <div className={cx("right")}>
-            <span>
+            <span className={cx("hello")}>
               <FontAwesomeIcon className="px-2" icon={faUser} size={"lg"} />
               Hello, {userName}
             </span>

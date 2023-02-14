@@ -1,10 +1,20 @@
+@media (min-width: 1100px) {
+  .header {
+    .header-bottom {
+      padding: 0 100px;
+    }
+  }
+}
+@media (max-width: 1099.98px) {
+  .header {
+    .header-bottom {
+      padding: 0 50px;
+    }
+  }
+}
+
 @media (max-width: 991.98px) {
   .header {
-    .header-middle {
-      .menu-list {
-        display: none;
-      }
-    }
     .header-bottom {
       .sidebar-menu {
         display: none;
@@ -12,10 +22,28 @@
       .navbar-search {
         width: 100%;
         display: flex;
-        .search-box {
-          width: 100%;
-        }
       }
+    }
+  }
+  .list-product-wrapper {
+    .list-product {
+      margin-left: calc(13%) !important;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    .header-middle {
+      .menu-list {
+        display: none;
+      }
+    }
+    .header-bottom {
+      display: none;
+    }
+    .header-middle {
+      border: 1px solid #e8e8e8;
     }
   }
 }
@@ -27,9 +55,19 @@
       width: 50%;
     }
     .right {
-      width: 25%;
       display: flex;
       justify-content: space-evenly;
+      .hello {
+        margin: 0 10px;
+      }
+      .log-out {
+        margin: 0 10px;
+        color: var(--primary-color) !important;
+        &:hover {
+          color: var(--primary-color) !important;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -40,15 +78,6 @@ a {
 
 .login-text {
   color: var(--primary-color) !important;
-}
-
-.log-out {
-  color: var(--primary-color) !important;
-
-  &:hover {
-    color: var(--primary-color) !important;
-    cursor: pointer;
-  }
 }
 
 a:hover {
@@ -101,25 +130,11 @@ a span:hover {
   font-weight: 600 !important;
 }
 
-.dropdown-btn {
-  height: 6.2rem;
-  width: 100%;
-}
-
-.text-dropdown {
-  height: 58px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #fff;
-  margin-left: 5px;
-}
 .search-box {
   width: 67%;
   .input-form {
     height: 5rem;
   }
-
   input[type="text"] {
     font-size: 12px;
   }
@@ -175,14 +190,6 @@ input::-webkit-input-placeholder {
 .btn-custom {
   height: 5.1rem;
   font-size: 2.5rem;
-}
-
-.list-item {
-  background-color: #fff;
-  color: var(--text-color);
-  font-size: 1.5rem;
-  width: 25rem !important;
-  padding: 1.5rem;
 }
 
 .container-icon-heart,
@@ -242,16 +249,37 @@ input::-webkit-input-placeholder {
 }
 
 .menu-content-sidebar {
-  .list-item {
-    padding: 5px 0px 5px 10px;
-    border-bottom: 1px solid #e8e8e8;
-    min-width: 248px;
+  .dropdown-btn {
+    height: 6.2rem;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    .text-dropdown {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-left: 5px;
+    }
   }
-  .list-item:hover {
-    background-color: #e8e8e8;
-  }
-  .list-item:active {
-    color: black;
-    background-color: #9b9696;
+  .dropdown-menu {
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 15%);
+    border: none;
+    width: 100%;
+    .list-item {
+      padding: 15px 0px 15px 15px;
+      border-bottom: 1px solid #e8e8e8;
+      background-color: #fff;
+      color: var(--text-color);
+      font-size: 2rem;
+    }
+    .list-item:hover {
+      background-color: #e8e8e8;
+    }
+    .list-item:active {
+      color: black;
+      background-color: #9b9696;
+    }
   }
 }
