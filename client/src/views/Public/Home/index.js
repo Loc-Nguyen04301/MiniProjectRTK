@@ -42,7 +42,7 @@ const Home = () => {
         </Col>
       </Row>
       {productCategoryList.map((item, index) => (
-        <ProductCategory category={item} key={index} />
+        <ProductCategory key={item} category={item} />
       ))}
       <Row className={cx("banner-container")}>
         <a href="/" className={cx("banner-image")}>

@@ -72,7 +72,13 @@ const WishListCart = () => {
                 </div>
                 <Modal isOpen={openModal} toggle={toggleModal}>
                   <ModalHeader toggle={toggleModal}></ModalHeader>
-                  <ModalBody>
+                  <ModalBody
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: "450",
+                      color: "#222",
+                    }}
+                  >
                     Bạn có chắc bạn muốn loại bỏ sản phẩm này khỏi giỏ mua hàng?
                   </ModalBody>
                   <ModalFooter>
@@ -80,12 +86,17 @@ const WishListCart = () => {
                       style={{
                         backgroundColor: "var(--primary-color)",
                         borderColor: "var(--primary-color)",
+                        fontSize: "12px",
                       }}
                       onClick={() => toggleModalAndRemoveItem(item)}
                     >
                       Đồng ý
                     </Button>
-                    <Button color="secondary" onClick={toggleModal}>
+                    <Button
+                      style={{ fontSize: "12px" }}
+                      color="secondary"
+                      onClick={toggleModal}
+                    >
                       Hủy bỏ
                     </Button>
                   </ModalFooter>

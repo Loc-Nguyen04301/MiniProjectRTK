@@ -40,6 +40,7 @@ const HeaderBottom = () => {
 
   useEffect(() => {
     try {
+      // Call API get product by Name
       const fetchingData = async () => {
         if (search === "") setSearchProducts([]);
         else {
@@ -49,11 +50,13 @@ const HeaderBottom = () => {
         setLoading(false);
       };
 
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         fetchingData();
-      }, 2500);
+      }, 2000);
 
       setLoading(true);
+
+      return () => clearTimeout(timer);
     } catch (e) {
       setLoading(true);
     }
@@ -114,6 +117,7 @@ const HeaderBottom = () => {
                   <DropdownMenu className={cx("dropdown-menu")}>
                     {productCategoryList.map((item) => (
                       <li
+                        key={item}
                         className={cx("list-item")}
                         onClick={() => {
                           handleNavigateCategory(item);

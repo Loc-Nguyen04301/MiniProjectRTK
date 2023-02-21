@@ -30,9 +30,9 @@ const Items = ({ currentItems }) => {
     <Row>
       {currentItems &&
         currentItems.map((product) => (
-          <Col xs="12" lg="4" md="4" key={product.id}>
+          <Col key={product.id} xs="12" lg="4" md="4">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
-              href="true"
               style={{ fontSize: "30px", float: "right" }}
               onClick={toggleModalDelete}
             >
@@ -55,7 +55,7 @@ const Items = ({ currentItems }) => {
             <Modal isOpen={openModal} toggle={toggleModalDelete}>
               <ModalHeader toggle={toggleModalDelete}></ModalHeader>
               <ModalBody>
-                Bạn có chắc bạn muốn loại bỏ sản phẩm này ???
+                Bạn có chắc bạn muốn loại bỏ sản phẩm này khỏi DATABASE ?
               </ModalBody>
               <ModalFooter>
                 <Button

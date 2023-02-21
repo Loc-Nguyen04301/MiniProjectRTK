@@ -40,7 +40,7 @@ const Login = () => {
       const res = await axios(config);
       const { token, userName, email, userId } = res.data;
       localStorage.setItem("token", token);
-      // localStorage.setItem("email", email);
+      localStorage.setItem("email", email);
       toast.success(res.data.status, {
         position: "top-center",
         autoClose: 2000,

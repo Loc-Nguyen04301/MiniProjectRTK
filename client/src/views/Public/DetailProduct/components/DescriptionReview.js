@@ -52,6 +52,11 @@ const DescriptionReview = ({ reviews, currentProduct }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      console.log({
+        product_id: currentProduct.id,
+        user_id: userId,
+        ...formValue,
+      });
       const res = await ReviewService.create({
         product_id: currentProduct.id,
         user_id: userId,
@@ -69,7 +74,7 @@ const DescriptionReview = ({ reviews, currentProduct }) => {
       });
       setTimeout(() => {
         navigate(0);
-      });
+      }, 3000);
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
         position: "top-center",
@@ -185,8 +190,11 @@ const DescriptionReview = ({ reviews, currentProduct }) => {
                 <h3>Đánh giá </h3>
                 {reviews.length > 0 ? (
                   <div>
-                    {reviews.map((review) => (
-                      <div className={cx("review-container")} key={review.id}>
+                    {reviews.map((review, index) => (
+                      <div
+                        key={`${review}-${index}`}
+                        className={cx("review-container")}
+                      >
                         <img
                           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV-Gh6uC11b9BUzfJ1OAuC3MgwwQdOLZL7PA&usqp=CAU"
                           alt="user_name"
@@ -197,16 +205,17 @@ const DescriptionReview = ({ reviews, currentProduct }) => {
                             {review.name}
                           </span>
                           <div>
-                            {[...Array(review.star)].map((item) => (
+                            {[...Array(review.star)].map((item, index) => (
                               <FontAwesomeIcon
+                                key={index}
                                 icon={faStar}
-                                key={item}
                                 style={{ color: "var(--primary-color)" }}
                               />
                             ))}
-                            {[...Array(5 - review.star)]?.map((item) => (
-                              <FontAwesomeIcon icon={faStar} key={item} />
-                            ))}
+                            {5 - review.star > 0 &&
+                              [...Array(5 - review.star)].map((item, index) => (
+                                <FontAwesomeIcon icon={faStar} key={index} />
+                              ))}
                           </div>
                           <p>
                             {new Date(review.createdAt)
@@ -247,7 +256,7 @@ const DescriptionReview = ({ reviews, currentProduct }) => {
                             },
                           })}
                         >
-                          {stars?.map((star, index) => (
+                          {stars.map((star, index) => (
                             <span
                               key={index}
                               {...getStarProps(index, {

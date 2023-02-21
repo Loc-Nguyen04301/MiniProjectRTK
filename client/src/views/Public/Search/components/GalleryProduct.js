@@ -12,7 +12,7 @@ const Items = ({ currentProducts }) => {
     <Row style={{ paddingTop: "40px" }}>
       {currentProducts &&
         currentProducts.map((product) => (
-          <Col xs="4" key={product.id}>
+          <Col key={product.id} xs="4">
             <div className={cx("box-product")}>
               <Link to={`/detail/${product.name}`}>
                 <img src={product.img} alt="detail-img" />

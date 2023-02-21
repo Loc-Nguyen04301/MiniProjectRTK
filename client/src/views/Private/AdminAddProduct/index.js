@@ -29,7 +29,7 @@ const AdminAddProduct = () => {
         new_price: Number(data.new_price),
         img: image,
       });
-      toast.success(res.data.message, {
+      toast.success(res.data.status, {
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -138,8 +138,8 @@ const AdminAddProduct = () => {
           <label htmlFor="category">Category</label>
           <div>
             <select id="category" name="category" {...register("category")}>
-              {productCategoryList.map((item, index) => (
-                <option value={item} key={index}>
+              {productCategoryList.map((item) => (
+                <option value={item} key={item}>
                   {item}
                 </option>
               ))}

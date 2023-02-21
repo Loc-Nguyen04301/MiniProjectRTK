@@ -19,12 +19,11 @@ let cx = classNames.bind(styles);
 
 const DetailProduct = () => {
   let { name } = useParams();
-  // const products = useSelector((state) => state.product);
-  // const currentProduct = products.find((item) => item.name === name);
   const [currentProduct, setCurrentProduct] = useState();
   const [reviews, setReviews] = useState();
   const cartItems = useSelector((state) => state.cart.cartItems);
-  const currentItem = cartItems?.find((item) => item.name === name);
+  // find product in Cart Redux
+  const currentItem = cartItems.find((item) => item.name === name);
 
   const dispatch = useDispatch();
 
@@ -98,7 +97,7 @@ const DetailProduct = () => {
                     <p className={cx("description")}>
                       {currentProduct.description}
                     </p>
-                    <div className="d-flex w-75 align-items-center">
+                    <div className="d-flex w-75 my-5">
                       <div
                         className={cx("number-product")}
                         style={{ height: "30px" }}
@@ -110,11 +109,7 @@ const DetailProduct = () => {
                         />
                         <input
                           className={cx("display-number")}
-                          value={
-                            currentItem?.quantity >= 0
-                              ? currentItem.quantity
-                              : 0
-                          }
+                          value={currentItem ? currentItem.quantity : 0}
                           readOnly
                         />
                         <input

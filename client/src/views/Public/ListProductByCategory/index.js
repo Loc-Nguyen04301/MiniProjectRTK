@@ -26,7 +26,7 @@ const ListProductByCategory = () => {
   }, [category]);
 
   return (
-    <Container style={{ margin: "50px auto" }} >
+    <Container style={{ margin: "50px auto" }}>
       <div className={cx("breadcrumbs")}>
         <a href="/">
           <span className={cx("home")}>Trang chủ</span>
@@ -37,7 +37,7 @@ const ListProductByCategory = () => {
       <Row>
         {products &&
           products.map((product) => (
-            <Col xs="3" key={product.id}>
+            <Col key={product.id} xs="3">
               <div className={cx("box-product")}>
                 <Link to={`/detail/${product.name}`}>
                   <img src={product.img} alt="" />

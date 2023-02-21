@@ -70,10 +70,9 @@
     border-right: none;
   }
   .add-product {
-    width: 100px;
     background-color: var(--primary-color);
     margin: 0 20px;
-    border-radius: 16px;
+    padding: 6px 18px;
     .add-product-text {
       margin: 0;
       font-size: 170%;
@@ -201,6 +200,8 @@
   border: none;
   font-size: 2.5rem;
   padding-bottom: 100px;
+  padding-right: 20px;
+  line-height: 0px;
 }
 
 .placeholder-review::-webkit-input-placeholder {

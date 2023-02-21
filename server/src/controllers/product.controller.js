@@ -28,7 +28,7 @@ exports.findByName = async (req, res, next) => {
     const reviews =
       products.length === 1
         ? await sequelize.query(
-            `SELECT title,description,star,name,"Reviews"."createdAt" from "Reviews","Users" WHERE product_id=${products[0].id}`,
+            `SELECT product_id,description,star,"Users"."name","Reviews"."createdAt" from "Reviews","Users" WHERE product_id=${products[0].id} AND "Users".id="Reviews".user_id`,
             { type: QueryTypes.SELECT }
           )
         : null;

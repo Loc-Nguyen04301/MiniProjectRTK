@@ -177,8 +177,8 @@ const AdminProductDetail = () => {
                   {...register("category")}
                   defaultValue={currentProduct.category}
                 >
-                  {productCategoryList.map((item, index) => (
-                    <option value={item} key={index}>
+                  {productCategoryList.map((item) => (
+                    <option value={item} key={item}>
                       {item}
                     </option>
                   ))}
