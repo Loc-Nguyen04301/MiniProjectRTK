@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "@/assets/styles/Header.module.scss";
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
@@ -35,13 +34,13 @@ const HeaderTop = () => {
               <></>
             ) : (
               <>
-                <Link to="/dang-ky" className={cx("login-text")}>
-                  Đăng kí
-                </Link>
+                <a href="/dang-ky" className={cx("login-text")}>
+                  {} Đăng kí {}
+                </a>
                 hoặc
-                <Link to="/dang-nhap" className={cx("login-text")}>
-                  Đăng nhập
-                </Link>
+                <a href="/dang-nhap" className={cx("login-text")}>
+                  {} Đăng nhập {}
+                </a>
               </>
             )}
           </p>
@@ -71,10 +70,10 @@ const HeaderTop = () => {
           </div>
         ) : (
           <div className={cx("right")}>
-            <Link to="/dang-nhap">
+            <a href="/dang-nhap">
               <FontAwesomeIcon className="px-2" icon={faLock} size={"xs"} />
               <span>Đăng nhập</span>
-            </Link>
+            </a>
           </div>
         )}
       </Container>

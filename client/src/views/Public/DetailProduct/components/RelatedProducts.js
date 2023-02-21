@@ -42,7 +42,7 @@ const RelatedProducts = ({ currentProduct }) => {
         {relatedProducts &&
           relatedProducts.map((item) => (
             <div key={item.id}>
-              <div>
+              <a href={`/detail/${item.name}`}>
                 <img src={item.img} alt="abc" />
                 <h2 style={{ color: "#222", fontWeight: "400" }}>
                   {item.name}
@@ -61,7 +61,7 @@ const RelatedProducts = ({ currentProduct }) => {
                 <span style={{ color: "#222", fontWeight: "500" }}>
                   {item.new_price.toLocaleString("vi") + "₫"}
                 </span>
-              </div>
+              </a>
             </div>
           ))}
       </Slider>

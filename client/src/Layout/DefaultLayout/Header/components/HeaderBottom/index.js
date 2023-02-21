@@ -41,19 +41,24 @@ const HeaderBottom = () => {
   useEffect(() => {
     try {
       const fetchingData = async () => {
-        const res = await ProductService.getByName(search);
         if (search === "") setSearchProducts([]);
-        else setSearchProducts(res.data.products);
+        else {
+          const res = await ProductService.getByName(search);
+          setSearchProducts(res.data.products);
+        }
         setLoading(false);
       };
+
       setTimeout(() => {
         fetchingData();
-      }, 1000);
+      }, 2500);
+
       setLoading(true);
     } catch (e) {
       setLoading(true);
     }
   }, [search]);
+
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
@@ -71,11 +76,13 @@ const HeaderBottom = () => {
     setSearch("");
     setTimeout(() => {
       navigate(`/detail/${name}`);
+      navigate(0);
     }, 1000);
   };
 
   const handleNavigateCategory = (category) => {
     navigate(`/category/${category}`);
+    navigate(0);
   };
 
   const clickToCheckOut = () => {
@@ -91,8 +98,8 @@ const HeaderBottom = () => {
               xl="3"
               lg="3"
               md="3"
-              sm="4"
-              xs="0"
+              sm="12"
+              xs="12"
               className={cx("sidebar-menu")}
             >
               <div className={cx("menu-content-sidebar")}>
@@ -123,7 +130,7 @@ const HeaderBottom = () => {
               xl="9"
               lg="9"
               md="9"
-              sm="8"
+              sm="12"
               xs="12"
               className={cx("navbar-search")}
             >

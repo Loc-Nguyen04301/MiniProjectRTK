@@ -17,17 +17,21 @@
   .header {
     .header-bottom {
       .sidebar-menu {
-        display: none;
+        .menu-content-sidebar {
+          .text-dropdown {
+            // display: none;
+          }
+        }
       }
       .navbar-search {
-        width: 100%;
         display: flex;
       }
     }
   }
   .list-product-wrapper {
     .list-product {
-      margin-left: calc(13%) !important;
+      width: calc(58%) !important;
+      margin-left: calc(6%) !important;
     }
   }
 }
@@ -39,9 +43,7 @@
         display: none;
       }
     }
-    .header-bottom {
-      display: none;
-    }
+
     .header-middle {
       border: 1px solid #e8e8e8;
     }
@@ -150,7 +152,7 @@ input[type="text"]:focus ~ .list-product {
   z-index: 10000;
 
   .list-product {
-    width: 558px;
+    width: calc(42%);
     margin: auto;
     background-color: #ebe6e6;
     opacity: 0.9;
