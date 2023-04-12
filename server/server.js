@@ -9,7 +9,6 @@ var corsOptions = {
   origin: process.env.CLIENT_URL,
   credentials: true,
 };
-
 // interact client to  server
 app.use(cors(corsOptions));
 // parse requests of content-type - application/json
